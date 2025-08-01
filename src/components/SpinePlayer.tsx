@@ -576,7 +576,7 @@ export default function SpinePlayer({
             setIsLoading(false);
             setHasError(true);
           }
-        });
+        }) as unknown as SpinePlayerType;
 
       } catch (error) {
         console.error('Failed to load Spine player:', error);
