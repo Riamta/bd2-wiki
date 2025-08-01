@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
 
 interface SpineData {
@@ -60,21 +60,25 @@ interface OrthoCamera {
 
 // Define Spine player types - using a more flexible type that extends the actual SpinePlayer
 interface SpinePlayerType {
-  skeleton?: any;
-  sceneRenderer?: any;
+  skeleton?: unknown;
+  sceneRenderer?: unknown;
   setAnimation?: (name: string, loop: boolean) => void;
   play?: () => void;
   pause?: () => void;
   dispose?: () => void;
   state?: {
-    addListener?: (listener: any) => void;
-    removeListener?: (listener: any) => void;
+    addListener?: (listener: AnimationListener) => void;
+    removeListener?: (listener: AnimationListener) => void;
   };
   animationState?: {
-    addListener?: (listener: any) => void;
-    removeListener?: (listener: any) => void;
+    addListener?: (listener: AnimationListener) => void;
+    removeListener?: (listener: AnimationListener) => void;
   } | null;
-  [key: string]: any; // Allow any additional properties from the actual SpinePlayer
+  [key: string]: unknown; // Allow any additional properties from the actual SpinePlayer
+}
+
+interface AnimationListener {
+  complete?: (entry: unknown) => void;
 }
 
 export default function SpinePlayer({
@@ -193,9 +197,9 @@ export default function SpinePlayer({
   useEffect(() => {
     if (selectedAnimation && availableAnimations.includes(selectedAnimation) && selectedAnimation !== currentAnimation) {
       // Use playAnimation but without calling the callback to avoid infinite loop
-      if (playerRef.current && (playerRef.current as any).setAnimation) {
+      if (playerRef.current && playerRef.current.setAnimation) {
         try {
-          (playerRef.current as any).setAnimation(selectedAnimation, true);
+          playerRef.current.setAnimation(selectedAnimation, true);
           setCurrentAnimation(selectedAnimation);
 
           // Recalculate camera position for new animation
@@ -203,12 +207,42 @@ export default function SpinePlayer({
             setupCameraForAnimation(playerRef.current);
           }, 50);
 
-        } catch (error) {
+        } catch {
           // Silently handle animation switch errors
         }
       }
     }
   }, [selectedAnimation, availableAnimations, currentAnimation]);
+
+  // Play next animation in sequence
+  const playNextAnimation = useCallback(() => {
+    if (playerRef.current && playerRef.current.setAnimation && availableAnimations.length > 0) {
+      // Get index of next animation
+      const currentIndex = availableAnimations.indexOf(currentAnimation);
+      const nextIndex = (currentIndex + 1) % availableAnimations.length;
+      const nextAnimation = availableAnimations[nextIndex];
+
+      try {
+        // Stop any existing animation and start the new one
+        playerRef.current.setAnimation(nextAnimation, true);
+        setCurrentAnimation(nextAnimation);
+
+        // Notify parent component
+        if (onAnimationSelect) {
+          onAnimationSelect(nextAnimation);
+        }
+
+        // Recalculate camera position for new animation
+        setTimeout(() => {
+          setupCameraForAnimation(playerRef.current);
+        }, 50);
+
+      } catch (error) {
+        // Silent handling of animation switching errors
+        console.error("Error switching to next animation:", error);
+      }
+    }
+  }, [availableAnimations, currentAnimation, onAnimationSelect]);
 
   // Handle reset trigger from parent
   useEffect(() => {
@@ -228,12 +262,12 @@ export default function SpinePlayer({
     }
   }, [isMobile]);
 
-  // Check if container is ready on every render 
+  // Check if container is ready on every render
   useEffect(() => {
     if (containerRef.current && !containerReady) {
       setContainerReady(true);
     }
-  });
+  }, [containerReady]);
 
   // Handle auto play functionality
   useEffect(() => {
@@ -255,7 +289,7 @@ export default function SpinePlayer({
         // Set up a listener for animation completion
         if (playerRef.current.animationState?.addListener) {
           const listener = {
-            complete: (entry: unknown) => {
+            complete: () => {
               // When animation completes, play the next one with a small delay
               autoPlayTimerRef.current = setTimeout(() => {
                 playNextAnimation();
@@ -294,37 +328,7 @@ export default function SpinePlayer({
         animationCompletedListenerRef.current = null;
       }
     };
-  }, [isAutoPlay, currentAnimation, availableAnimations]);
-
-  // Play next animation in sequence
-  const playNextAnimation = () => {
-    if (playerRef.current && playerRef.current.setAnimation && availableAnimations.length > 0) {
-      // Get index of next animation
-      const currentIndex = availableAnimations.indexOf(currentAnimation);
-      const nextIndex = (currentIndex + 1) % availableAnimations.length;
-      const nextAnimation = availableAnimations[nextIndex];
-
-      try {
-        // Stop any existing animation and start the new one
-        playerRef.current.setAnimation(nextAnimation, true);
-        setCurrentAnimation(nextAnimation);
-
-        // Notify parent component
-        if (onAnimationSelect) {
-          onAnimationSelect(nextAnimation);
-        }
-
-        // Recalculate camera position for new animation
-        setTimeout(() => {
-          setupCameraForAnimation(playerRef.current);
-        }, 50);
-
-      } catch (error) {
-        // Silent handling of animation switching errors
-        console.error("Error switching to next animation:", error);
-      }
-    }
-  };
+  }, [isAutoPlay, currentAnimation, availableAnimations, playNextAnimation]);
 
   // Modify switchAnimation function to use playNextAnimation in auto-play mode
   const switchAnimation = () => {
@@ -373,7 +377,7 @@ export default function SpinePlayer({
           setupCameraForAnimation(playerRef.current);
         }, 50);
 
-      } catch (error) {
+      } catch {
         // Silently handle animation switch errors
       }
     }
@@ -488,12 +492,14 @@ export default function SpinePlayer({
           update: () => {
             // Update camera if manual camera exists
             if (cameraRef.current && playerRef.current && playerRef.current.sceneRenderer) {
-              const cam = playerRef.current.sceneRenderer.camera;
+              const cam = (playerRef.current.sceneRenderer as any).camera;
               const manualCamera = cameraRef.current;
-              cam.position.x = manualCamera.position.x;
-              cam.position.y = manualCamera.position.y;
-              cam.zoom = manualCamera.zoom;
-              cam.update();
+              if (cam && cam.position) {
+                cam.position.x = manualCamera.position.x;
+                cam.position.y = manualCamera.position.y;
+                cam.zoom = manualCamera.zoom;
+                if (cam.update) cam.update();
+              }
             }
           },
           success: (player: unknown) => {
@@ -508,11 +514,14 @@ export default function SpinePlayer({
             }
 
             // Setup manual camera
-            if (player.sceneRenderer) {
-              cameraRef.current = new OrthoCamera(
-                player.sceneRenderer.camera.viewportWidth,
-                player.sceneRenderer.camera.viewportHeight
-              );
+            if (playerRef.current && playerRef.current.sceneRenderer) {
+              const camera = (playerRef.current.sceneRenderer as any).camera;
+              if (camera) {
+                cameraRef.current = new OrthoCamera(
+                  camera.viewportWidth,
+                  camera.viewportHeight
+                );
+              }
             }
 
             // Determine which animation to start with
@@ -534,32 +543,35 @@ export default function SpinePlayer({
               }
             }
 
-            if (player.setAnimation && startAnimation) {
+            if (playerRef.current && playerRef.current.setAnimation && startAnimation) {
               try {
-                player.setAnimation(startAnimation, true);
+                playerRef.current.setAnimation(startAnimation, true);
                 setCurrentAnimation(startAnimation);
-                player.play();
-              } catch (error) {
+                if (playerRef.current?.play) {
+                  playerRef.current.play();
+                }
+              } catch {
                 // Silently handle start animation errors
               }
             }
 
             // Set skin if specified
-            if (spineData.skin && spineData.skin !== 'default' && player.skeleton) {
-              player.skeleton.setSkinByName(spineData.skin);
-              player.skeleton.setSlotsToSetupPose();
-              player.skeleton.updateWorldTransform();
+            if (spineData.skin && spineData.skin !== 'default' && playerRef.current && playerRef.current.skeleton) {
+              const skeleton = playerRef.current.skeleton as any;
+              if (skeleton.setSkinByName) skeleton.setSkinByName(spineData.skin);
+              if (skeleton.setSlotsToSetupPose) skeleton.setSlotsToSetupPose();
+              if (skeleton.updateWorldTransform) skeleton.updateWorldTransform();
             }
 
             // Setup camera for initial animation
             setTimeout(() => {
-              setupCameraForAnimation(player);
+              setupCameraForAnimation(playerRef.current);
             }, 100);
 
             setIsLoading(false);
             setHasError(false);
           },
-          error: (_player: any, error: any) => {
+          error: (_player: unknown, error: unknown) => {
             console.error('Spine loading error:', error);
             setIsLoading(false);
             setHasError(true);
@@ -581,26 +593,28 @@ export default function SpinePlayer({
       }
       cameraRef.current = null;
     };
-  }, [spineData, containerReady, width, height, isHVersion, isCutsceneMode, isFatedGuestMode, scaleLock]);
+  }, [spineData, containerReady, width, height, isHVersion, isCutsceneMode, isFatedGuestMode, scaleLock, onAnimationsLoaded, selectedAnimation]);
 
   // Function to setup camera for current animation
-  const setupCameraForAnimation = (player: any) => {
+  const setupCameraForAnimation = (player: SpinePlayerType | null) => {
     if (!player || !player.skeleton) return;
 
     // Calculate bounds for current animation
-    player.skeleton.setToSetupPose();
-    player.skeleton.updateWorldTransform();
+    const skeleton = player.skeleton as any;
+    if (skeleton.setToSetupPose) skeleton.setToSetupPose();
+    if (skeleton.updateWorldTransform) skeleton.updateWorldTransform();
 
     // Sử dụng mảng [x, y] thay vì object để tránh lỗi offset.set is not a function
     const offset: [number, number] = [0, 0];
     const size: [number, number] = [100000, 100000];
-    player.skeleton.getBounds(offset, size);
+    if (skeleton.getBounds) skeleton.getBounds(offset, size);
     const centerX = offset[0] + size[0] / 2;
     const centerY = offset[1] + size[1] / 2;
 
     // Update viewport configuration
-    if (player.config) {
-      player.config.viewport = {
+    const playerAny = player as any;
+    if (playerAny.config) {
+      playerAny.config.viewport = {
         x: offset[0],
         y: offset[1],
         width: size[0],
@@ -621,9 +635,9 @@ export default function SpinePlayer({
 
       const paddedWidth = size[0];
       const paddedHeight = size[1] + 100;
-      const canvas = player.canvas;
+      const canvas = (player as any).canvas;
 
-      if (canvas) {
+      if (canvas && canvas.width && canvas.height) {
         const canvasAspect = canvas.height / canvas.width;
         const viewportAspect = paddedHeight / paddedWidth;
         const baseZoom = canvasAspect > viewportAspect
