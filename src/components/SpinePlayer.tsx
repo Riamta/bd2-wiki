@@ -48,6 +48,35 @@ const attributeBackgroundColors: Record<string, string> = {
   Dark: 'rgb(90, 40, 120)'
 };
 
+// Define OrthoCamera interface
+interface OrthoCamera {
+  position: {
+    x: number;
+    y: number;
+  };
+  zoom: number;
+  update(): void;
+}
+
+// Define Spine player types - using a more flexible type that extends the actual SpinePlayer
+interface SpinePlayerType {
+  skeleton?: any;
+  sceneRenderer?: any;
+  setAnimation?: (name: string, loop: boolean) => void;
+  play?: () => void;
+  pause?: () => void;
+  dispose?: () => void;
+  state?: {
+    addListener?: (listener: any) => void;
+    removeListener?: (listener: any) => void;
+  };
+  animationState?: {
+    addListener?: (listener: any) => void;
+    removeListener?: (listener: any) => void;
+  } | null;
+  [key: string]: any; // Allow any additional properties from the actual SpinePlayer
+}
+
 export default function SpinePlayer({
   spineData,
   fallbackImageUrl,
@@ -70,10 +99,10 @@ export default function SpinePlayer({
   isAutoPlay = false // 默认不自动播放
 }: SpinePlayerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const playerRef = useRef<any>(null);
-  const cameraRef = useRef<any>(null);
+  const playerRef = useRef<SpinePlayerType | null>(null);
+  const cameraRef = useRef<OrthoCamera | null>(null);
   const autoPlayTimerRef = useRef<NodeJS.Timeout | null>(null); // Auto play timer reference
-  const animationCompletedListenerRef = useRef<any>(null); // Reference to store animation completed listener
+  const animationCompletedListenerRef = useRef<unknown>(null); // Reference to store animation completed listener
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [containerReady, setContainerReady] = useState(false);
@@ -164,9 +193,9 @@ export default function SpinePlayer({
   useEffect(() => {
     if (selectedAnimation && availableAnimations.includes(selectedAnimation) && selectedAnimation !== currentAnimation) {
       // Use playAnimation but without calling the callback to avoid infinite loop
-      if (playerRef.current && playerRef.current.setAnimation) {
+      if (playerRef.current && (playerRef.current as any).setAnimation) {
         try {
-          playerRef.current.setAnimation(selectedAnimation, true);
+          (playerRef.current as any).setAnimation(selectedAnimation, true);
           setCurrentAnimation(selectedAnimation);
 
           // Recalculate camera position for new animation
@@ -199,7 +228,7 @@ export default function SpinePlayer({
     }
   }, [isMobile]);
 
-  // Check if container is ready on every render
+  // Check if container is ready on every render 
   useEffect(() => {
     if (containerRef.current && !containerReady) {
       setContainerReady(true);
@@ -215,7 +244,7 @@ export default function SpinePlayer({
     }
 
     // Remove any existing animation completed listener
-    if (animationCompletedListenerRef.current && playerRef.current?.animationState) {
+    if (animationCompletedListenerRef.current && playerRef.current?.animationState?.removeListener) {
       playerRef.current.animationState.removeListener(animationCompletedListenerRef.current);
       animationCompletedListenerRef.current = null;
     }
@@ -224,9 +253,9 @@ export default function SpinePlayer({
     if (isAutoPlay && availableAnimations.length > 1 && playerRef.current) {
       try {
         // Set up a listener for animation completion
-        if (playerRef.current.animationState) {
+        if (playerRef.current.animationState?.addListener) {
           const listener = {
-            complete: (entry: any) => {
+            complete: (entry: unknown) => {
               // When animation completes, play the next one with a small delay
               autoPlayTimerRef.current = setTimeout(() => {
                 playNextAnimation();
@@ -260,7 +289,7 @@ export default function SpinePlayer({
       }
 
       // Cleanup animation completed listener
-      if (animationCompletedListenerRef.current && playerRef.current?.animationState) {
+      if (animationCompletedListenerRef.current && playerRef.current?.animationState?.removeListener) {
         playerRef.current.animationState.removeListener(animationCompletedListenerRef.current);
         animationCompletedListenerRef.current = null;
       }
@@ -415,7 +444,7 @@ export default function SpinePlayer({
         const { SpinePlayer, GLTexture, OrthoCamera } = await import('@esotericsoftware/spine-player');
 
         // Clear any existing player
-        if (playerRef.current) {
+        if (playerRef.current?.dispose) {
           playerRef.current.dispose();
         }
 
@@ -467,10 +496,10 @@ export default function SpinePlayer({
               cam.update();
             }
           },
-          success: (player: any) => {
+          success: (player: unknown) => {
             // Get all available animations
-            const animations = player.skeleton?.data?.animations || [];
-            const animationNames = animations.map((anim: any) => anim.name);
+            const animations = (player as { skeleton?: { data?: { animations?: { name: string }[] } } }).skeleton?.data?.animations || [];
+            const animationNames = animations.map((anim: { name: string }) => anim.name);
             setAvailableAnimations(animationNames);
 
             // Notify parent component about available animations
@@ -546,7 +575,7 @@ export default function SpinePlayer({
     loadSpinePlayer();
     // Cleanup on unmount
     return () => {
-      if (playerRef.current) {
+      if (playerRef.current?.dispose) {
         playerRef.current.dispose();
         playerRef.current = null;
       }
