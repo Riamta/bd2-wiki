@@ -11256,84 +11256,6 @@
             },
             "costumes": [
                 {
-                    "id": "Olivier_1",
-                    "path": "Olivier/003603",
-                    "name": "Fallen Wings",
-                    "image_url": "https://www.souseihaku.com/characters-large/Olivier_1.webp",
-                    "spine_data": [
-                        {
-                            "spinePath": "/assets/characters/Olivier/003603/char003603.skel",
-                            "spineCutscene": "/assets/characters/Olivier/003603/cutscene/cutscene_char003603.skel"
-                        }
-                    ],
-                    "skill": {
-                        "name": "Purging Flash",
-                        "base_skill": "Gây sát thương bằng {VALUE2}% (Magic DMG). Kích hoạt Cuồng Nộ (Rampage), gây thêm sát thương. Sát thương tăng thêm {VALUE3}% cho mỗi SP bổ sung tiêu hao.",
-                        "chain": 5,
-                        "levels": [
-                            {
-                                "VALUE1": 150,
-                                "VALUE2": 60,
-                                "sp": 2,
-                                "cd": 3
-                            },
-                            {
-                                "VALUE1": 150,
-                                "VALUE2": 60,
-                                "sp": 1,
-                                "cd": 3
-                            },
-                            {
-                                "VALUE1": 170,
-                                "VALUE2": 68,
-                                "sp": 1,
-                                "cd": 3
-                            },
-                            {
-                                "VALUE1": 190,
-                                "VALUE2": 76,
-                                "sp": 1,
-                                "cd": 3
-                            },
-                            {
-                                "VALUE1": 210,
-                                "VALUE2": 84,
-                                "sp": 1,
-                                "cd": 3
-                            },
-                            {
-                                "VALUE1": 230,
-                                "VALUE2": 92,
-                                "sp": 1,
-                                "cd": 3
-                            }
-                        ],
-                        "potential": [
-                            {
-                                "type": "Fire",
-                                "value": ""
-                            },
-                            {
-                                "type": "Fire",
-                                "value": ""
-                            },
-                            {
-                                "type": "Fire",
-                                "value": ""
-                            }
-                        ],
-                        "preview": "https://cdn.discordapp.com/attachments/1395307115589140483/1395334180266835969/Olivier_1.mp4?ex=687a11b8&is=6878c038&hm=eb581ba94cfd1f1f32b96d193262a925aa018084a9abc2e15612930b38147b49&"
-                    },
-                    "permanent": {
-                        "MATK": "5.20"
-                    },
-                    "bonding": {
-                        "MATK": "5.20",
-                        "CRDM": "28.40",
-                        "LIGHT_DAMAGE": "30.0"
-                    }
-                },
-                {
                     "id": "Olivier_3",
                     "path": "Olivier/003602",
                     "name": "Apostle",
@@ -11346,7 +11268,7 @@
                     ],
                     "skill": {
                         "name": "Unbreakable Command",
-                        "base_skill": "Preemptive Action\nYou have a 100% chance to evade enemy attacks until you successfully evade {VALUE1} times.\nYour Magic ATK is increased by {VALUE2}% for {VALUE3} turn(s).",
+                        "base_skill": "Hành động Phủ đầu\nBạn có 100% cơ hội né tránh đòn tấn công của kẻ địch cho đến khi né tránh thành công {VALUE1} lần.\nTăng MATK của bạn thêm {VALUE2}% trong {VALUE3} lượt.",
                         "chain": 0,
                         "levels": [
                             {
@@ -11417,6 +11339,84 @@
                     }
                 },
                 {
+                    "id": "Olivier_1",
+                    "path": "Olivier/003603",
+                    "name": "Fallen Wings",
+                    "image_url": "https://www.souseihaku.com/characters-large/Olivier_1.webp",
+                    "spine_data": [
+                        {
+                            "spinePath": "/assets/characters/Olivier/003603/char003603.skel",
+                            "spineCutscene": "/assets/characters/Olivier/003603/cutscene/cutscene_char003603.skel"
+                        }
+                    ],
+                    "skill": {
+                        "name": "Purging Flash",
+                        "base_skill": "Gây sát thương bằng {VALUE1}% (Magic DMG). Kích hoạt Cuồng Nộ (Rampage), gây thêm sát thương. Sát thương tăng thêm {VALUE2}% cho mỗi SP bổ sung tiêu hao.",
+                        "chain": 1,
+                        "levels": [
+                            {
+                                "VALUE1": 150,
+                                "VALUE2": 60,
+                                "sp": 2,
+                                "cd": 3
+                            },
+                            {
+                                "VALUE1": 150,
+                                "VALUE2": 60,
+                                "sp": 1,
+                                "cd": 3
+                            },
+                            {
+                                "VALUE1": 170,
+                                "VALUE2": 68,
+                                "sp": 1,
+                                "cd": 3
+                            },
+                            {
+                                "VALUE1": 190,
+                                "VALUE2": 76,
+                                "sp": 1,
+                                "cd": 3
+                            },
+                            {
+                                "VALUE1": 210,
+                                "VALUE2": 84,
+                                "sp": 1,
+                                "cd": 3
+                            },
+                            {
+                                "VALUE1": 230,
+                                "VALUE2": 92,
+                                "sp": 1,
+                                "cd": 3
+                            }
+                        ],
+                        "potential": [
+                            {
+                                "type": "Fire",
+                                "value": ""
+                            },
+                            {
+                                "type": "Fire",
+                                "value": ""
+                            },
+                            {
+                                "type": "Fire",
+                                "value": ""
+                            }
+                        ],
+                        "preview": "https://cdn.discordapp.com/attachments/1395307115589140483/1395334180266835969/Olivier_1.mp4?ex=687a11b8&is=6878c038&hm=eb581ba94cfd1f1f32b96d193262a925aa018084a9abc2e15612930b38147b49&"
+                    },
+                    "permanent": {
+                        "MATK": "5.20"
+                    },
+                    "bonding": {
+                        "MATK": "5.20",
+                        "CRDM": "28.40",
+                        "LIGHT_DAMAGE": "30.0"
+                    }
+                },
+                {
                     "id": "Olivier_2",
                     "path": "Olivier/003601",
                     "name": "Supreme God Archbishop",
@@ -11429,8 +11429,8 @@
                         }
                     ],
                     "skill": {
-                        "name": "Unbreakable Command",
-                        "base_skill": "Preemptive Action\nYou have a 100% chance to evade enemy attacks until you successfully evade {VALUE1} times.\nYour Magic ATK is increased by {VALUE2}% for {VALUE3} turn(s).",
+                        "name": "???",
+                        "base_skill": "???",
                         "chain": 0,
                         "levels": [
                             {

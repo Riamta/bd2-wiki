@@ -16,7 +16,9 @@
     "start": "next start",
     "lint": "next lint",
     "deploy": "vercel",
-    "deploy:prod": "vercel --prod"
+    "deploy:prod": "vercel --prod",
+    "import-codes": "node scripts/import-codes.js",
+    "show-codes": "node scripts/import-codes.js --show"
   },
   "dependencies": {
     "@esotericsoftware/spine-player": "4.1.55",

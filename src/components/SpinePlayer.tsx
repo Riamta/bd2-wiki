@@ -37,6 +37,8 @@ interface SpinePlayerProps {
   selectedAnimation?: string; // Thêm prop để nhận animation được chọn
   onAnimationSelect?: (animation: string) => void; // Callback khi chọn animation
   isAutoPlay?: boolean; // 添加自动播放属性
+  isRecording?: boolean; // Add recording prop
+  onRecordingComplete?: () => void; // Callback khi animation kết thúc trong lúc record
 }
 
 // Map of attribute background colors
@@ -100,13 +102,16 @@ export default function SpinePlayer({
   onAnimationsLoaded,
   selectedAnimation,
   onAnimationSelect,
-  isAutoPlay = false // 默认不自动播放
+  isAutoPlay = false, // 默认不自动播放
+  isRecording = false, // Add recording prop
+  onRecordingComplete // Add recording complete callback
 }: SpinePlayerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<SpinePlayerType | null>(null);
   const cameraRef = useRef<OrthoCamera | null>(null);
   const autoPlayTimerRef = useRef<NodeJS.Timeout | null>(null); // Auto play timer reference
   const animationCompletedListenerRef = useRef<unknown>(null); // Reference to store animation completed listener
+  const recordingListenerRef = useRef<unknown>(null); // Reference to store recording animation completed listener
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [containerReady, setContainerReady] = useState(false);
@@ -329,6 +334,56 @@ export default function SpinePlayer({
       }
     };
   }, [isAutoPlay, currentAnimation, availableAnimations, playNextAnimation]);
+
+  // Handle recording functionality
+  useEffect(() => {
+    // Remove any existing recording listener
+    if (recordingListenerRef.current && playerRef.current?.animationState?.removeListener) {
+      playerRef.current.animationState.removeListener(recordingListenerRef.current);
+      recordingListenerRef.current = null;
+    }
+
+    if (isRecording && playerRef.current) {
+      // Restart current animation when recording starts
+      if (playerRef.current.setAnimation && currentAnimation) {
+        try {
+          playerRef.current.setAnimation(currentAnimation, false); // Set to non-looping for recording
+          if (playerRef.current.play) {
+            playerRef.current.play();
+          }
+        } catch (error) {
+          console.error("Error restarting animation for recording:", error);
+        }
+      }
+
+      // Set up listener for animation completion during recording
+      if (playerRef.current.animationState?.addListener && onRecordingComplete) {
+        try {
+          const recordingListener = {
+            complete: () => {
+              // When animation completes during recording, stop recording
+              if (onRecordingComplete) {
+                onRecordingComplete();
+              }
+            }
+          };
+
+          playerRef.current.animationState.addListener(recordingListener);
+          recordingListenerRef.current = recordingListener;
+        } catch (error) {
+          console.error("Error setting up recording completion listener:", error);
+        }
+      }
+    }
+
+    return () => {
+      // Cleanup recording listener
+      if (recordingListenerRef.current && playerRef.current?.animationState?.removeListener) {
+        playerRef.current.animationState.removeListener(recordingListenerRef.current);
+        recordingListenerRef.current = null;
+      }
+    };
+  }, [isRecording, currentAnimation, onRecordingComplete]);
 
   // Modify switchAnimation function to use playNextAnimation in auto-play mode
   const switchAnimation = () => {
@@ -593,7 +648,7 @@ export default function SpinePlayer({
       }
       cameraRef.current = null;
     };
-  }, [spineData, containerReady, width, height, isHVersion, isCutsceneMode, isFatedGuestMode, scaleLock, onAnimationsLoaded, selectedAnimation]);
+  }, [spineData, containerReady, width, height, isHVersion, isCutsceneMode, isFatedGuestMode, scaleLock, onAnimationsLoaded]);
 
   // Function to setup camera for current animation
   const setupCameraForAnimation = (player: SpinePlayerType | null) => {
@@ -711,7 +766,7 @@ export default function SpinePlayer({
   return (
     <div
       ref={containerRef}
-      className={`spine-player ${className} relative cursor-pointer group select-none touch-none`}
+      className={`spine-player ${className} relative group select-none touch-none`}
       style={{
         width: width,
         height: height,
@@ -720,7 +775,6 @@ export default function SpinePlayer({
         WebkitUserSelect: 'none',
         WebkitTapHighlightColor: 'transparent',
         transform: `translate(${position.x}px, ${position.y}px) scale(${isMobile ? (zoomLevel * 0.8 * (isCutsceneMode ? getScaleCutscene() : (isFatedGuestMode ? getScaleFatedGuest() : 1))) : (getScale() * zoomLevel * (isCutsceneMode ? getScaleCutscene() : (isFatedGuestMode ? getScaleFatedGuest() : 1)))}) translateX(${isMobile ? '0' : getTranslateX()}) translateY(${isMobile ? '0' : (typeof spineData.offset?.y === 'number' ? `${spineData.offset.y}%` : (spineData.offset?.y || '-5%'))})`,
-        cursor: isMobile ? 'pointer' : (isDragging ? 'grabbing' : 'grab'),
         transformOrigin: getTransformOrigin(),
         opacity: isLoading ? 0 : 1,
         transition: isMobile ? 'opacity 0.3s ease-in-out' : 'opacity 0.3s ease-in-out, transform 0.1s ease-out'

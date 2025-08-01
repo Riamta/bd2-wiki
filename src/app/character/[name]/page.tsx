@@ -203,6 +203,13 @@ export default function CharacterDetailPage() {
         }
     }, []);
 
+    // Function to handle recording completion
+    const handleRecordingComplete = useCallback(() => {
+        if (isRecording && mediaRecorderRef.current && mediaRecorderRef.current.state === 'recording') {
+            mediaRecorderRef.current.stop();
+        }
+    }, [isRecording]);
+
     // Function to export animation as video
     const handleExportVideo = useCallback(() => {
         if (isRecording) {
@@ -252,13 +259,6 @@ export default function CharacterDetailPage() {
             mediaRecorderRef.current = mediaRecorder;
             mediaRecorder.start();
             setIsRecording(true);
-
-            // Auto-stop after 5 seconds (enough for 1-2 animation loops)
-            setTimeout(() => {
-                if (mediaRecorder.state === 'recording') {
-                    mediaRecorder.stop();
-                }
-            }, 5000);
 
         } catch (error) {
             console.error('Failed to export animation:', error);
@@ -459,6 +459,8 @@ export default function CharacterDetailPage() {
                                     selectedAnimation={selectedAnimation}
                                     onAnimationSelect={handleAnimationSelect}
                                     isAutoPlay={isAutoPlay}
+                                    isRecording={isRecording}
+                                    onRecordingComplete={handleRecordingComplete}
                                 />
                             ) : currentCostume?.image_url ? (
                                 <Image
@@ -492,6 +494,7 @@ export default function CharacterDetailPage() {
                         isRecording={isRecording}
                         handleSaveImage={handleSaveImage}
                         handleExportVideo={handleExportVideo}
+                        onRecordingComplete={handleRecordingComplete}
                         showScalePanel={showScalePanel}
                         setShowScalePanel={setShowScalePanel}
                         showAnimationPanel={showAnimationPanel}
@@ -632,6 +635,8 @@ export default function CharacterDetailPage() {
                                         selectedAnimation={selectedAnimation}
                                         onAnimationSelect={handleAnimationSelect}
                                         isAutoPlay={isAutoPlay}
+                                        isRecording={isRecording}
+                                        onRecordingComplete={handleRecordingComplete}
                                     />
                                 ) : currentCostume?.image_url ? (
                                     <Image

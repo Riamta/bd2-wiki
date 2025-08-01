@@ -20,6 +20,7 @@ interface AnimationControlsProps {
     isRecording: boolean;
     handleSaveImage: () => void;
     handleExportVideo: () => void;
+    onRecordingComplete?: () => void;
     showScalePanel: boolean;
     setShowScalePanel: (value: boolean) => void;
     showAnimationPanel: boolean;
@@ -53,6 +54,7 @@ export function AnimationControls({
     isRecording,
     handleSaveImage,
     handleExportVideo,
+    onRecordingComplete,
     showScalePanel,
     setShowScalePanel,
     showAnimationPanel,
