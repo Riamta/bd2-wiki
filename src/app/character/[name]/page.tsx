@@ -230,11 +230,40 @@ export default function CharacterDetailPage() {
         }
 
         try {
-            // Capture stream directly from canvas
-            const stream = container.captureStream(30); // 30 FPS
-            const mediaRecorder = new MediaRecorder(stream, {
-                mimeType: 'video/webm;codecs=vp9'
-            });
+            // Capture stream directly from canvas with higher FPS for better quality
+            const stream = container.captureStream(60); // 60 FPS for smoother video
+            
+            // Try to use the best available codec for highest quality and compatibility
+            let mediaRecorderOptions;
+            let fileExtension = 'webm';
+            
+            if (MediaRecorder.isTypeSupported('video/mp4;codecs=avc1.42E01E')) {
+                // H.264 in MP4 for best compatibility and quality
+                mediaRecorderOptions = {
+                    mimeType: 'video/mp4;codecs=avc1.42E01E',
+                    videoBitsPerSecond: 12000000 // 12 Mbps for very high quality
+                };
+                fileExtension = 'mp4';
+            } else if (MediaRecorder.isTypeSupported('video/webm;codecs=vp9')) {
+                // VP9 codec with very high bitrate
+                mediaRecorderOptions = {
+                    mimeType: 'video/webm;codecs=vp9',
+                    videoBitsPerSecond: 10000000 // 10 Mbps for high quality
+                };
+            } else if (MediaRecorder.isTypeSupported('video/webm;codecs=vp8')) {
+                // Fallback to VP8 with high bitrate
+                mediaRecorderOptions = {
+                    mimeType: 'video/webm;codecs=vp8',
+                    videoBitsPerSecond: 8000000 // 8 Mbps
+                };
+            } else {
+                // Last resort - default webm
+                mediaRecorderOptions = {
+                    videoBitsPerSecond: 6000000 // 6 Mbps
+                };
+            }
+            
+            const mediaRecorder = new MediaRecorder(stream, mediaRecorderOptions);
 
             const chunks: Blob[] = [];
 
@@ -245,11 +274,11 @@ export default function CharacterDetailPage() {
             };
 
             mediaRecorder.onstop = () => {
-                const blob = new Blob(chunks, { type: 'video/webm' });
+                const blob = new Blob(chunks, { type: mediaRecorderOptions.mimeType || 'video/webm' });
                 const url = URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 const costumeName = character?.costumes[selectedCostume]?.name || 'costume';
-                link.download = `${character?.name || 'character'}_${costumeName}_${new Date().getTime()}.webm`;
+                link.download = `${character?.name || 'character'}_${costumeName}_${new Date().getTime()}.${fileExtension}`;
                 link.href = url;
                 link.click();
                 URL.revokeObjectURL(url);
