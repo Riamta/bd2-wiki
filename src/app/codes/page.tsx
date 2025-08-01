@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -58,7 +58,7 @@ export default function CodesPage() {
   };
 
   // Function to fetch and update codes data
-  const fetchCodes = async (forceRefresh = false) => {
+  const fetchCodes = useCallback(async (forceRefresh = false) => {
     setLoading(true);
     try {
       // Try to get data from localStorage if not forcing refresh
@@ -164,7 +164,7 @@ export default function CodesPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   const refreshData = () => {
   void fetchCodes(true);

@@ -3,7 +3,7 @@
 import { Suspense } from 'react';
 import { useState, useEffect } from 'react';
 import { Character } from '@/types/character';
-import { loadGameData, loadBannerData } from '@/data/gameData';
+import { loadGameData, loadBannerData, Banner } from '@/data/gameData';
 import CharacterList, { ExtendedCostumeWithCharacter, extractCostumesFromCharacters } from '@/components/CharacterList';
 import BannerSection from '@/components/BannerSection';
 
@@ -18,7 +18,7 @@ function HomePageContent() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [bannerCostumes, setBannerCostumes] = useState<ExtendedCostumeWithCharacter[]>([]);
-  const [banners, setBanners] = useState<any[]>([]);
+  const [banners, setBanners] = useState<Banner[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {

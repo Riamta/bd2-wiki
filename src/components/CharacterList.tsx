@@ -1,14 +1,13 @@
 'use client';
 
-import { Character, Costume, SkillLevel } from '@/types/character';
+import { Character, SkillLevel } from '@/types/character';
 import CharacterCard from '@/components/CharacterCard';
 import CostumeCard, { CostumeWithCharacter } from '@/components/CostumeCard';
 import { Button } from "@/components/ui/button";
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import CharacterFilter from '@/components/CharacterFilter';
-import BannerCard from '@/components/BannerCard';
-import { Banner } from '@/data/gameData';
+
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
@@ -348,79 +347,83 @@ export default function CharacterList({
   };
 
   // Sort function
-  const sortData = (data: any[], sortBy: string, sortOrder: 'asc' | 'desc') => {
+  const sortData = (data: (Character | ExtendedCostumeWithCharacter)[], sortBy: string, sortOrder: 'asc' | 'desc') => {
     // If sortBy is 'default', return data in original order
     if (sortBy === 'default') {
       return data;
     }
 
     return [...data].sort((a, b) => {
-      let aValue: any;
-      let bValue: any;
+      let aValue: string | number;
+      let bValue: string | number;
 
       if (displayMode === 'characters') {
-        // Sort characters
+        // Sort characters - type guard to ensure we're working with Character objects
+        const aChar = a as Character;
+        const bChar = b as Character;
         switch (sortBy) {
           case 'name':
-            aValue = a.name?.toLowerCase() || '';
-            bValue = b.name?.toLowerCase() || '';
+            aValue = aChar.name?.toLowerCase() || '';
+            bValue = bChar.name?.toLowerCase() || '';
             break;
           case 'hp':
-            aValue = a.max_level_stats?.HP || 0;
-            bValue = b.max_level_stats?.HP || 0;
+            aValue = aChar.max_level_stats?.HP || 0;
+            bValue = bChar.max_level_stats?.HP || 0;
             break;
           case 'atk':
-            aValue = a.max_level_stats?.ATK || 0;
-            bValue = b.max_level_stats?.ATK || 0;
+            aValue = aChar.max_level_stats?.ATK || 0;
+            bValue = bChar.max_level_stats?.ATK || 0;
             break;
           case 'def':
-            aValue = a.max_level_stats?.DEF || 0;
-            bValue = b.max_level_stats?.DEF || 0;
+            aValue = aChar.max_level_stats?.DEF || 0;
+            bValue = bChar.max_level_stats?.DEF || 0;
             break;
           case 'cdmg':
-            aValue = a.max_level_stats?.CRDM || 0;
-            bValue = b.max_level_stats?.CRDM || 0;
+            aValue = aChar.max_level_stats?.CRDM || 0;
+            bValue = bChar.max_level_stats?.CRDM || 0;
             break;
           case 'cr':
-            aValue = a.max_level_stats?.CR || 0;
-            bValue = b.max_level_stats?.CR || 0;
+            aValue = aChar.max_level_stats?.CR || 0;
+            bValue = bChar.max_level_stats?.CR || 0;
             break;
           case 'mres':
-            aValue = a.max_level_stats?.MRES || 0;
-            bValue = b.max_level_stats?.MRES || 0;
+            aValue = aChar.max_level_stats?.MRES || 0;
+            bValue = bChar.max_level_stats?.MRES || 0;
             break;
           default:
-            aValue = a.name?.toLowerCase() || '';
-            bValue = b.name?.toLowerCase() || '';
+            aValue = aChar.name?.toLowerCase() || '';
+            bValue = bChar.name?.toLowerCase() || '';
         }
       } else {
-        // Sort costumes
+        // Sort costumes - type guard to ensure we're working with ExtendedCostumeWithCharacter objects
+        const aCostume = a as ExtendedCostumeWithCharacter;
+        const bCostume = b as ExtendedCostumeWithCharacter;
         switch (sortBy) {
           case 'name':
-            aValue = a.characterName?.toLowerCase() || '';
-            bValue = b.characterName?.toLowerCase() || '';
+            aValue = aCostume.characterName?.toLowerCase() || '';
+            bValue = bCostume.characterName?.toLowerCase() || '';
             break;
           case 'costume':
-            aValue = a.name?.toLowerCase() || '';
-            bValue = b.name?.toLowerCase() || '';
+            aValue = aCostume.name?.toLowerCase() || '';
+            bValue = bCostume.name?.toLowerCase() || '';
             break;
           case 'chain':
-            aValue = a.skill?.chain || 0;
-            bValue = b.skill?.chain || 0;
+            aValue = aCostume.skill?.chain || 0;
+            bValue = bCostume.skill?.chain || 0;
             break;
           case 'sp':
             // Get SP from the highest level of skill
-            aValue = a.skill?.levels ? Math.max(...a.skill.levels.map((level: SkillLevel) => level.sp || 0)) : 0;
-            bValue = b.skill?.levels ? Math.max(...b.skill.levels.map((level: SkillLevel) => level.sp || 0)) : 0;
+            aValue = aCostume.skill?.levels ? Math.max(...aCostume.skill.levels.map((level: SkillLevel) => level.sp || 0)) : 0;
+            bValue = bCostume.skill?.levels ? Math.max(...bCostume.skill.levels.map((level: SkillLevel) => level.sp || 0)) : 0;
             break;
           case 'cd':
             // Get CD from the highest level of skill
-            aValue = a.skill?.levels ? Math.max(...a.skill.levels.map((level: SkillLevel) => level.cd || 0)) : 0;
-            bValue = b.skill?.levels ? Math.max(...b.skill.levels.map((level: SkillLevel) => level.cd || 0)) : 0;
+            aValue = aCostume.skill?.levels ? Math.max(...aCostume.skill.levels.map((level: SkillLevel) => level.cd || 0)) : 0;
+            bValue = bCostume.skill?.levels ? Math.max(...bCostume.skill.levels.map((level: SkillLevel) => level.cd || 0)) : 0;
             break;
           default:
-            aValue = a.characterName?.toLowerCase() || '';
-            bValue = b.characterName?.toLowerCase() || '';
+            aValue = aCostume.characterName?.toLowerCase() || '';
+            bValue = bCostume.characterName?.toLowerCase() || '';
         }
       }
 
@@ -429,9 +432,11 @@ export default function CharacterList({
           ? aValue.localeCompare(bValue)
           : bValue.localeCompare(aValue);
       } else {
+        const aNum = typeof aValue === 'number' ? aValue : 0;
+        const bNum = typeof bValue === 'number' ? bValue : 0;
         return sortOrder === 'asc'
-          ? aValue - bValue
-          : bValue - aValue;
+          ? aNum - bNum
+          : bNum - aNum;
       }
     });
   };
@@ -471,7 +476,7 @@ export default function CharacterList({
     });
 
     // Sort filtered characters
-    const sortedCharacters = sortData(filtered, sortBy, sortOrder);
+    const sortedCharacters = sortData(filtered, sortBy, sortOrder) as Character[];
     setFilteredCharacters(sortedCharacters);
   }, [characters, searchTerm, selectedAttribute, selectedType, selectedGender, selectedStar, selectedCollabs, showOnlyCollab, sortBy, sortOrder]);
 
@@ -515,7 +520,7 @@ export default function CharacterList({
     });
 
     // Sort filtered costumes
-    const sortedCostumes = sortData(filtered, sortBy, sortOrder);
+    const sortedCostumes = sortData(filtered, sortBy, sortOrder) as ExtendedCostumeWithCharacter[];
     setFilteredCostumes(sortedCostumes);
   }, [costumes, searchTerm, selectedAttribute, selectedType, selectedGender, selectedStar, selectedCollabs, showFatedGuest, showOnlyCollab, sortBy, sortOrder]);
 
@@ -581,7 +586,6 @@ export default function CharacterList({
         {/* Filter Section */}
         <CharacterFilter
           characters={characters}
-          filteredCharacters={filteredCharacters}
           onFilterChange={setFilteredCharacters}
           searchTerm={searchTerm}
           onSearchChange={updateSearchTerm}
@@ -602,7 +606,6 @@ export default function CharacterList({
           onShowOnlyCollabChange={updateShowOnlyCollab}
           onClearAllFilters={clearAllFiltersAndUpdateURL}
           sortBy={sortBy}
-          sortOrder={sortOrder}
           onDisplayModeChange={updateDisplayMode}
         />
 

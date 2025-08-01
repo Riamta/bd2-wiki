@@ -22,7 +22,6 @@ interface CostumeCardProps {
 }
 
 export default function CostumeCard({ costume, sortBy = 'default' }: CostumeCardProps) {
-  const searchParams = useSearchParams();
 
   // Only preserve costume parameter, remove other filter/sort parameters
   const characterUrl = `/character/${encodeURIComponent(costume.characterName)}?costume=${costume.costumeIndex}`;
@@ -37,16 +36,7 @@ export default function CostumeCard({ costume, sortBy = 'default' }: CostumeCard
     return minValue.toString();
   };
 
-  // Function to get maximum value from skill levels
-  const getMaxSkillValue = (property: 'sp' | 'cd') => {
-    if (!costume.skill?.levels || costume.skill.levels.length === 0) {
-      return 'N/A';
-    }
 
-    // Get the highest level value
-    const maxValue = Math.max(...costume.skill.levels.map(level => level[property] || 0));
-    return maxValue.toString();
-  };
 
   // Get the chain value
   const getChainValue = () => {

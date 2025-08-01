@@ -4,7 +4,6 @@ import { Gender, GenderIcon } from '@/components/Icons/GenderIcon';
 
 interface CharacterFilterProps {
   characters: Character[];
-  filteredCharacters: Character[];
   onFilterChange: (filtered: Character[]) => void;
   searchTerm: string;
   onSearchChange: (term: string) => void;
@@ -25,13 +24,11 @@ interface CharacterFilterProps {
   onShowOnlyCollabChange: (value: boolean) => void;
   onClearAllFilters: () => void; 
   sortBy?: string;  // Thêm sortBy
-  sortOrder?: 'asc' | 'desc';  // Thêm sortOrder
   onDisplayModeChange: (mode: 'characters' | 'costumes') => void; // Thêm prop mới
 }
 
 export default function CharacterFilter({
   characters,
-  filteredCharacters,
   onFilterChange,
   searchTerm,
   onSearchChange,
@@ -52,7 +49,6 @@ export default function CharacterFilter({
   onShowOnlyCollabChange,
   onClearAllFilters,
   sortBy = 'default',
-  sortOrder = 'desc',
   onDisplayModeChange, // Thêm prop mới
 }: CharacterFilterProps) {
   const attributes = ['Fire', 'Water', 'Wind', 'Light', 'Dark']; // No 'All'
@@ -73,11 +69,7 @@ export default function CharacterFilter({
     Magical: { src: '/images/attack_type/icon_matk.svg', alt: 'Magical' },
   };
 
-  const starIcons = {
-    '3': <span className="text-yellow-400 text-xl">★★★</span>,
-    '4': <span className="text-yellow-400 text-xl">★★★★</span>,
-    '5': <span className="text-yellow-400 text-xl">★★★★★</span>,
-  };
+
 
   // Dynamically get collab options from characters
   const collabs = ['All', ...Array.from(new Set(characters
@@ -177,9 +169,7 @@ export default function CharacterFilter({
     onFilterChange(filtered);
   };
 
-  const applyCurrentFilters = () => {
-    applyFilters(searchTerm, selectedAttribute, selectedType, selectedGender, selectedStar, selectedCollabs, showOnlyCollab);
-  };
+
 
   const hasActiveFilters = searchTerm || selectedAttribute !== 'All' || selectedType !== 'All' ||
     selectedGender !== 'All' || selectedStar !== 'All' || showOnlyCollab || selectedCollabs.length > 0 ||
@@ -386,7 +376,7 @@ export default function CharacterFilter({
           <div className="flex flex-wrap gap-2">
             {searchTerm && (
               <span className="bg-green-600/20 text-green-400 px-2 py-1 rounded text-xs border border-green-400/30">
-                Search: "{searchTerm}"
+                Search: &quot;{searchTerm}&quot;
               </span>
             )}
             {selectedAttribute !== 'All' && (

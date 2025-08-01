@@ -16,7 +16,7 @@ import { AnimationControls } from '@/components/AnimationControls';
 import { SkillPotentialDisplay } from '@/components/characters/SkillPotentialDisplay';
 
 function StatDisplay({ stats }: { stats: Stats; title: string }) {
-    const statEntries = Object.entries(stats).filter(([_, value]) => value !== undefined && value !== 0);
+    const statEntries = Object.entries(stats).filter(([, value]) => value !== undefined && value !== 0);
 
     if (statEntries.length === 0) return null;
 
@@ -178,27 +178,7 @@ export default function CharacterDetailPage() {
         setAvailableAnimations([]);
     }, [selectedCostume, selectedSkin]);
 
-    // Function to save current frame as image
-    const handleSaveImage = useCallback(() => {
-        // Find the canvas element from SpinePlayer
-        const container = document.querySelector('.spine-character-background canvas') ||
-            document.querySelector('.spine-character-mobile canvas');
-
-        if (container instanceof HTMLCanvasElement) {
-            try {
-                // Create a link element and trigger download
-                const link = document.createElement('a');
-                link.download = `${character?.name || 'character'}_${currentCostume?.name || 'costume'}_${new Date().getTime()}.png`;
-                link.href = container.toDataURL('image/png');
-                link.click();
-            } catch (error) {
-                console.error('Failed to save image:', error);
-                alert('Failed to save image. Please try again.');
-            }
-        } else {
-            alert('No canvas found. Please wait for the animation to load.');
-        }
-    }, [character?.name, character?.costumes, selectedCostume]);
+ 
 
     // Function to handle back navigation
     const handleBackNavigation = useCallback(() => {
@@ -361,6 +341,28 @@ export default function CharacterDetailPage() {
     const activePotentials = currentSkill?.potential ?
         currentSkill.potential.filter((_, idx) => activePotentialIndexes.includes(idx)) :
         [];
+
+    // Function to save current frame as image
+    const handleSaveImage = useCallback(() => {
+        // Find the canvas element from SpinePlayer
+        const container = document.querySelector('.spine-character-background canvas') ||
+            document.querySelector('.spine-character-mobile canvas');
+
+        if (container instanceof HTMLCanvasElement) {
+            try {
+                // Create a link element and trigger download
+                const link = document.createElement('a');
+                link.download = `${character?.name || 'character'}_${currentCostume?.name || 'costume'}_${new Date().getTime()}.png`;
+                link.href = container.toDataURL('image/png');
+                link.click();
+            } catch (error) {
+                console.error('Failed to save image:', error);
+                alert('Failed to save image. Please try again.');
+            }
+        } else {
+            alert('No canvas found. Please wait for the animation to load.');
+        }
+    }, [character?.name, currentCostume?.name]);
 
     // Xử lý kích hoạt từng potential
     const handleTogglePotential = useCallback((index: number) => {

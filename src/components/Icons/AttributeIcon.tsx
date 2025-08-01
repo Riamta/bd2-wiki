@@ -2,7 +2,7 @@ import React from 'react';
 
 export type AttributeType = 'Fire' | 'Water' | 'Wind' | 'Light' | 'Dark';
 
-export function AttributeIcon({ attribute, size = 20, className = '' }: { attribute: AttributeType, size?: number, className?: string }) {
+export function AttributeIcon({ attribute, size = 20 }: { attribute: AttributeType, size?: number }) {
     const icons: Record<AttributeType, string> = {
         Fire: '/images/elementals/fire.webp',
         Water: '/images/elementals/water.webp',

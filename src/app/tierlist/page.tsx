@@ -1,14 +1,14 @@
 "use client";
-import { loadGameData, loadTierListPVEData } from '@/data/gameData';
+import { loadGameData, loadTierListPVEData, TierList } from '@/data/gameData';
 import CharacterCard from '@/components/CharacterCard';
 import { Character } from '@/types/character';
 import React from 'react';
-import { AttributeIcon } from '@/components/Icons/AttributeIcon';
+import { AttributeIcon, AttributeType } from '@/components/Icons/AttributeIcon';
 
 const ELEMENTS = ['Fire', 'Water', 'Wind', 'Light', 'Dark'];
 
 export default function TierListPage() {
-    const [tierList, setTierList] = React.useState<any[]>([]);
+    const [tierList, setTierList] = React.useState<TierList[]>([]);
     const [characters, setCharacters] = React.useState<Character[]>([]);
     const [isMobile, setIsMobile] = React.useState(false);
 
@@ -51,7 +51,7 @@ export default function TierListPage() {
                                         <th className="sticky left-0 bg-gray-900 text-left p-2 z-10">Rank</th>
                                         {ELEMENTS.map(el => (
                                             <th key={el} className="p-2 text-center">
-                                                <AttributeIcon attribute={el as any} size={28} />
+                                                <AttributeIcon attribute={el as AttributeType} size={28} />
                                             </th>
                                         ))}
                                     </tr>
@@ -106,7 +106,7 @@ export default function TierListPage() {
                                             return (
                                                 <div key={element} className="bg-gray-700/50 rounded-lg p-3">
                                                     <div className="flex items-center gap-2 mb-3">
-                                                        <AttributeIcon attribute={element as any} size={24} />
+                                                        <AttributeIcon attribute={element as AttributeType} size={24} />
                                                         <span className="font-semibold text-white">{element}</span>
                                                     </div>
 
