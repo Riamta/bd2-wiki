@@ -1,0 +1,22 @@
+{
+    "banner": [
+        {
+            "name": "Sacred Justia",
+            "costume": "Reclaimed Destiny",
+            "start_date": "2025-07-16",
+            "end_date": "2025-07-17"
+        },
+        {
+            "name": "Olivier",
+            "costume": "Apostle",
+            "start_date": "2025-07-17",
+            "end_date": "2025-08-04"
+        },
+        {
+            "name": "Michaela",
+            "costume": "Beachside Justice",
+            "start_date": "2025-07-17",
+            "end_date": "2025-08-04"
+        }
+    ]
+}

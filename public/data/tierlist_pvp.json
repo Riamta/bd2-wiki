@@ -1,0 +1,142 @@
+{
+    "tierList": [
+        {
+            "rank": "S",
+            "elements": {
+                "Fire": {
+                    "characters": [
+                        "Eris",
+                        "Levia",
+                        "Loen"
+                    ]
+                },
+                "Water": {
+                    "characters": [
+                        "Morpeah",
+                        "Sylvia",
+                        "Yumi",
+                        "Wilhelmina"
+                    ]
+                },
+                "Wind": {
+                    "characters": [
+                        "Hikage",
+                        "Nebris",
+                        "Venaka"
+                    ]
+                },
+                "Light": {
+                    "characters": [
+                        "Michaela",
+                        "Sacred Justia",
+                        "Ventana",
+                        "Yuri"
+                    ]
+                },
+                "Dark": {
+                    "characters": [
+                        "Blade",
+                        "Luvencia"
+                    ]
+                }
+            }
+        },
+        {
+            "rank": "A",
+            "elements": {
+                "Fire": {
+                    "characters": [
+                        "Anastasia",
+                        "Liatris",
+                        "Rubia"
+                    ]
+                },
+                "Water": {
+                    "characters": [
+                        "Roxy",
+                        "Scheherazade"
+                    ]
+                },
+                "Wind": {
+                    "characters": [
+                        "Dalvi",
+                        "Yozakura"
+                    ]
+                },
+                "Light": {
+                    "characters": [
+                        "Justia",
+                        "Priestess"
+                    ]
+                },
+                "Dark": {
+                    "characters": [
+                        "Eclipse",
+                        "Eleaneer",
+                        "Nartas"
+                    ]
+                }
+            }
+        },
+        {
+            "rank": "B",
+            "elements": {
+                "Fire": {
+                    "characters": ["Elise", "Lathel"]
+                },
+                "Water": {
+                    "characters": ["Rafina"]
+                },
+                "Wind": {
+                    "characters": ["Alec", "Gray", "Yomi", "High Elf Archer"]
+                },
+                "Light": {
+                    "characters": ["Angelica", "Sword Maiden"]
+                },
+                "Dark": {
+                    "characters": ["Rou"]
+                }
+            }
+        },
+        {
+            "rank": "C",
+            "elements": {
+                "Fire": {
+                    "characters": ["Goblin Slayer"]
+                },
+                "Water": {
+                    "characters": ["Glacia"]
+                },
+                "Wind": {
+                    "characters": ["Zenith"]
+                },
+                "Light": {
+                    "characters": []
+                },
+                "Dark": {
+                    "characters": ["Celia"]
+                }
+            }
+        },
+        {
+            "rank": "D",
+            "elements": {
+                "Fire": {
+                    "characters": ["Liberta"]
+                },
+                "Water": {
+                    "characters": ["Teresse", "Refithea"]
+                },
+                "Wind": {
+                    "characters": ["Diana", "Lecliss", "Olstein"]
+                },
+                "Light": {
+                    "characters": ["Granhildr", "Helena"]
+                },
+                "Dark": {
+                    "characters": ["Seir"]
+                }
+            }
+        }
+    ]
+}

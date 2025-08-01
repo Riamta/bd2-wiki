@@ -1,0 +1,51 @@
+[
+    {
+        "code": "2025BD2JUL",
+        "reward": "Draw Ticket(s) x2",
+        "add_date": "2025-07-10",
+        "end_date": "2025-08-1",
+        "status": "active"
+    },
+    {
+        "code": "BURAJOCODE03C",
+        "reward": "Draw Ticket(s) x3",
+        "add_date": "2025-07-17",
+        "end_date": "2025-07-20",
+        "status": "expired"
+    },
+    {
+        "code": "BD2BW2025",
+        "reward": "Dia x600",
+        "add_date": "2025-06-01",
+        "end_date": "2025-08-31",
+        "status": "active"
+    },
+    {
+        "code": "BD2RADIO0701",
+        "reward": "Draw Ticket(s) x3",
+        "add_date": "2025-07-10",
+        "end_date": "2025-08-11",
+        "status": "active"
+    },
+    {
+        "code": "WAITING4LEGEND",
+        "reward": "Venomous Touch (UR) x1",
+        "add_date": "2025-07-10",
+        "end_date": "2030-08-11",
+        "status": "active"
+    },
+    {
+        "code": "BD2025SUMMER",
+        "reward": "Scroll (UR) x1",
+        "add_date": "2025-07-10",
+        "end_date": "2030-08-11",
+        "status": "active"
+    },
+    {
+        "code": "BD2SDCC2025",
+        "reward": "Dia x600",
+        "add_date": "2025-07-29",
+        "end_date": "2025-08-24",
+        "status": "active"
+    }
+]
