@@ -788,11 +788,11 @@ export default function SpinePlayer({
       onMouseLeave={!isMobile ? handleMouseUp : undefined}
       title={isMobile
         ? ((isCutsceneMode || isFatedGuestMode)
-          ? `Chạm để chuyển đổi giữa các animation (${availableAnimations.indexOf(currentAnimation) + 1}/${availableAnimations.length})`
-          : (availableAnimations.length > 1 ? `Chạm để chuyển đổi giữa idle/motion (Hiện tại: ${currentAnimation})` : `Spine Animation (Hiện tại: ${currentAnimation})`))
+          ? `${availableAnimations.indexOf(currentAnimation) + 1}/${availableAnimations.length})`
+          : (availableAnimations.length > 1 ? `${currentAnimation})` : `${currentAnimation})`))
         : ((isCutsceneMode || isFatedGuestMode)
-          ? `Click để chuyển đổi giữa các animation (${availableAnimations.indexOf(currentAnimation) + 1}/${availableAnimations.length}) | Kéo để di chuyển | Cuộn để phóng to (${Math.round(zoomLevel * 100)}%)`
-          : `${availableAnimations.length > 1 ? `Click để chuyển đổi giữa idle/motion (Hiện tại: ${currentAnimation}) | ` : `Hiện tại: ${currentAnimation} | `}Kéo để di chuyển | Cuộn để phóng to (${Math.round(zoomLevel * 100)}%)`)
+          ? `${availableAnimations.indexOf(currentAnimation) + 1}/${availableAnimations.length}`
+          : `${availableAnimations.length > 1 ? `${currentAnimation}` : `${currentAnimation}`}`)
       }
     >
       {/* Element background color */}
