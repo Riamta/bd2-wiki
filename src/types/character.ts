@@ -105,7 +105,7 @@ export interface Character {
   gender: 'Male' | 'Female';
   star: number;
   collab?: string; // Collaboration event (e.g., "ReZero", "Tensura", "Overlord", etc.)
-  max_level_stats: Stats;
+  maxlevel: Stats;
   engraving: Stats;
   awakening: Stats;
   costumes: Costume[];

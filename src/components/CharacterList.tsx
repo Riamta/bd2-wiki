@@ -367,28 +367,28 @@ export default function CharacterList({
             bValue = bChar.name?.toLowerCase() || '';
             break;
           case 'hp':
-            aValue = aChar.max_level_stats?.HP || 0;
-            bValue = bChar.max_level_stats?.HP || 0;
+            aValue = aChar.maxlevel?.HP || 0;
+            bValue = bChar.maxlevel?.HP || 0;
             break;
           case 'atk':
-            aValue = aChar.max_level_stats?.ATK || 0;
-            bValue = bChar.max_level_stats?.ATK || 0;
+            aValue = aChar.maxlevel?.ATK || 0;
+            bValue = bChar.maxlevel?.ATK || 0;
             break;
           case 'def':
-            aValue = aChar.max_level_stats?.DEF || 0;
-            bValue = bChar.max_level_stats?.DEF || 0;
+            aValue = aChar.maxlevel?.DEF || 0;
+            bValue = bChar.maxlevel?.DEF || 0;
             break;
           case 'cdmg':
-            aValue = aChar.max_level_stats?.CRDM || 0;
-            bValue = bChar.max_level_stats?.CRDM || 0;
+            aValue = aChar.maxlevel?.CRDM || 0;
+            bValue = bChar.maxlevel?.CRDM || 0;
             break;
           case 'cr':
-            aValue = aChar.max_level_stats?.CR || 0;
-            bValue = bChar.max_level_stats?.CR || 0;
+            aValue = aChar.maxlevel?.CR || 0;
+            bValue = bChar.maxlevel?.CR || 0;
             break;
           case 'mres':
-            aValue = aChar.max_level_stats?.MRES || 0;
-            bValue = bChar.max_level_stats?.MRES || 0;
+            aValue = aChar.maxlevel?.MRES || 0;
+            bValue = bChar.maxlevel?.MRES || 0;
             break;
           default:
             aValue = aChar.name?.toLowerCase() || '';

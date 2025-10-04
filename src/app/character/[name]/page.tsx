@@ -739,7 +739,7 @@ export default function CharacterDetailPage() {
                                                 <div className="flex-shrink-0">
                                                 </div>
                                                 <div className="flex-1 sm:-ml-4">
-                                                    <MaxLevelStatsDisplay stats={character.max_level_stats} />
+                                                    <MaxLevelStatsDisplay stats={character.maxlevel} />
                                                 </div>
                                             </div>
                                         </div>

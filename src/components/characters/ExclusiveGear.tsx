@@ -7,7 +7,7 @@ interface ExclusiveGearProps {
 
 export function ExclusiveGear({ character }: ExclusiveGearProps) {
     if (!character.exclusive_gear) return null;
-
+    if (character.exclusive_gear.name === "zzz") return null;
     return (
         <div className="bg-[#1a1e2e] rounded-lg overflow-hidden mt-4">
             <div className="bg-[#222739] py-2 px-4 flex justify-between items-center">
