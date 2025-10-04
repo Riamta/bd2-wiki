@@ -202,15 +202,154 @@ def parse_js_data(js_file_path: str) -> Dict[str, Any]:
                         if level_obj:
                             levels[0] = level_obj
             
-            # Parse skillPotential_en (chỉ nếu có)
+            # Parse skillPotential_en hoặc skillPotential (chỉ nếu có)
             potential = []
-            if 'skillPotential_en:' in object_content:
+            if 'skillPotential_en:' in object_content or 'skillPotential:' in object_content:
                 # Sử dụng regex phức tạp hơn để match nested brackets
                 potential_match = re.search(r'skillPotential_en:\s*\[(.*?)\]', object_content, re.DOTALL)
+                if not potential_match:
+                    # Thử tìm skillPotential thay vì skillPotential_en
+                    potential_match = re.search(r'skillPotential:\s*\[(.*?)\]', object_content, re.DOTALL)
+                
                 if potential_match:
                     potential_content = potential_match.group(1)
                     # Parse potential objects with switches - sử dụng regex đơn giản hơn
                     # Tìm tất cả các object bắt đầu với {
+                    potential_objects = []
+                    brace_count = 0
+                    current_obj = ""
+                    in_string = False
+                    escape_next = False
+                    
+                    for char in potential_content:
+                        if escape_next:
+                            escape_next = False
+                            current_obj += char
+                            continue
+                            
+                        if char == '\\':
+                            escape_next = True
+                            current_obj += char
+                            continue
+                            
+                        if char == '"' and not escape_next:
+                            in_string = not in_string
+                            current_obj += char
+                            continue
+                            
+                        if not in_string:
+                            if char == '{':
+                                if brace_count == 0:
+                                    current_obj = char
+                                else:
+                                    current_obj += char
+                                brace_count += 1
+                            elif char == '}':
+                                current_obj += char
+                                brace_count -= 1
+                                if brace_count == 0:
+                                    potential_objects.append(current_obj)
+                                    current_obj = ""
+                            else:
+                                current_obj += char
+                        else:
+                            current_obj += char
+                    
+                    # Parse từng object
+                    for obj_content in potential_objects:
+                        type_match = re.search(r'type:\s*"([^"]+)"', obj_content)
+                        value_match = re.search(r'value:\s*"([^"]+)"', obj_content)
+                        
+                        if type_match and value_match:
+                            pot_type = type_match.group(1)
+                            pot_value = value_match.group(1)
+                            
+                            # Parse switches if exists
+                            switches = []
+                            switches_match = re.search(r'switches:\s*\[([^\]]+)\]', obj_content)
+                            if switches_match:
+                                switches_content = switches_match.group(1)
+                                # Parse individual switch objects
+                                switch_pattern = r'\{[^}]*target:\s*"([^"]+)"[^}]*value:\s*(\d+)[^}]*\}'
+                                switch_matches = re.finditer(switch_pattern, switches_content)
+                                
+                                for switch_match in switch_matches:
+                                    switch_target = switch_match.group(1)
+                                    switch_value = int(switch_match.group(2))
+                                    switches.append({
+                                        "target": switch_target,
+                                        "value": switch_value
+                                    })
+                            
+                            potential_item = {
+                                "type": pot_type,
+                                "value": pot_value
+                            }
+                            
+                            # Add switches if exists
+                            if switches:
+                                potential_item["switches"] = switches
+                            
+                            potential.append(potential_item)
+            
+            # Nếu không tìm thấy skillPotential_en hoặc skillPotential trong object hiện tại, tìm theo costumeId
+            if not potential and costume_id:
+                # Tìm object có costumeId này và có skillPotential_en hoặc skillPotential
+                costume_pattern = rf'costumeId:\s*"{costume_id}".*?skillPotential_en:\s*\[(.*?)\]'
+                costume_match = re.search(costume_pattern, content, re.DOTALL)
+                
+                if not costume_match:
+                    # Thử tìm skillPotential thay vì skillPotential_en
+                    costume_pattern = rf'costumeId:\s*"{costume_id}".*?skillPotential:\s*\[(.*?)\]'
+                    costume_match = re.search(costume_pattern, content, re.DOTALL)
+                
+                # Nếu không tìm thấy với pattern đơn giản, thử pattern phức tạp hơn
+                if not costume_match:
+                    # Tìm vị trí bắt đầu của skillPotential_en hoặc skillPotential
+                    start_pattern = rf'costumeId:\s*"{costume_id}".*?skillPotential_en:\s*\['
+                    start_match = re.search(start_pattern, content, re.DOTALL)
+                    
+                    if not start_match:
+                        # Thử tìm skillPotential thay vì skillPotential_en
+                        start_pattern = rf'costumeId:\s*"{costume_id}".*?skillPotential:\s*\['
+                        start_match = re.search(start_pattern, content, re.DOTALL)
+                    
+                    if start_match:
+                        start_pos = start_match.end()
+                        # Tìm vị trí kết thúc của array
+                        brace_count = 0
+                        end_pos = start_pos
+                        in_string = False
+                        escape_next = False
+                        
+                        for j, char in enumerate(content[start_pos:], start_pos):
+                            if escape_next:
+                                escape_next = False
+                                continue
+                                
+                            if char == '\\':
+                                escape_next = True
+                                continue
+                                
+                            if char == '"' and not escape_next:
+                                in_string = not in_string
+                                continue
+                                
+                            if not in_string:
+                                if char == '[':
+                                    brace_count += 1
+                                elif char == ']':
+                                    brace_count -= 1
+                                    if brace_count == 0:
+                                        end_pos = j
+                                        break
+                        
+                        if end_pos > start_pos:
+                            potential_content = content[start_pos:end_pos]
+                            costume_match = type('Match', (), {'group': lambda x: potential_content})()
+                if costume_match:
+                    potential_content = costume_match.group(1)
+                    # Parse potential objects với cùng logic như trên
                     potential_objects = []
                     brace_count = 0
                     current_obj = ""
@@ -453,6 +592,12 @@ def update_json_data(json_file_path: str, characters_data: Dict[str, Any], conte
                         # Cập nhật potential từ skillPotential_en
                         if char_data['skillPotential_en']:
                             costume['skill']['potential'] = char_data['skillPotential_en']
+                            print(f"Updated potential for costume {costume_id}: {len(char_data['skillPotential_en'])} items")
+                            # In ra chi tiết potential để debug
+                            for i, pot in enumerate(char_data['skillPotential_en']):
+                                print(f"  Potential {i+1}: {pot['type']} - {pot['value']}")
+                                if 'switches' in pot:
+                                    print(f"    Switches: {pot['switches']}")
                         
                         # Cập nhật chain
                         if char_data['chain']:
@@ -513,6 +658,12 @@ def update_json_data(json_file_path: str, characters_data: Dict[str, Any], conte
                 # Cập nhật potential từ skillPotential_en
                 if char_data['skillPotential_en']:
                     character['skill']['potential'] = char_data['skillPotential_en']
+                    print(f"Updated potential for character {character_id}: {len(char_data['skillPotential_en'])} items")
+                    # In ra chi tiết potential để debug
+                    for i, pot in enumerate(char_data['skillPotential_en']):
+                        print(f"  Potential {i+1}: {pot['type']} - {pot['value']}")
+                        if 'switches' in pot:
+                            print(f"    Switches: {pot['switches']}")
                 
                 # Cập nhật chain
                 if char_data['chain']:

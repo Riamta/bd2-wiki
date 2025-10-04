@@ -92,7 +92,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "fire_036"
                             }
                         ],
                         "preview": "https://cdnimg-v2.gamekee.com/wiki2.0/video/50118/497891/2025/0/21/667408.mp4"
@@ -2636,31 +2656,31 @@
                             {
                                 "sp": 3,
                                 "cd": 5,
-                                "VALUE1": "100",
+                                "VALUE1": "100\\r",
                                 "VALUE2": 15
                             },
                             {
                                 "sp": 3,
                                 "cd": 5,
-                                "VALUE1": "125",
+                                "VALUE1": "125\\r",
                                 "VALUE2": 15
                             },
                             {
                                 "sp": 3,
                                 "cd": 5,
-                                "VALUE1": "150",
+                                "VALUE1": "150\\r",
                                 "VALUE2": 15
                             },
                             {
                                 "sp": 3,
                                 "cd": 5,
-                                "VALUE1": "175",
+                                "VALUE1": "175\\r",
                                 "VALUE2": 15
                             },
                             {
                                 "sp": 3,
                                 "cd": 5,
-                                "VALUE1": "200",
+                                "VALUE1": "200\\r",
                                 "VALUE2": 15
                             }
                         ],
@@ -3436,8 +3456,40 @@
                         "preview": "",
                         "potential": [
                             {
-                                "type": "Fire",
-                                "value": "Skill damage increased by 100%"
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Cooldown time reduced by 2"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "fire_011"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP消費を1減少"
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "冷却時間が2回分短縮"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "fire_011"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP 소모 1 감소"
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "쿨타임이 2회 감소"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "fire_011"
                             }
                         ]
                     },
@@ -7000,31 +7052,31 @@
                             {
                                 "sp": 2,
                                 "cd": 1,
-                                "VALUE1": "40",
+                                "VALUE1": "40\\r",
                                 "VALUE2": 20
                             },
                             {
                                 "sp": 2,
                                 "cd": 1,
-                                "VALUE1": "55",
+                                "VALUE1": "55\\r",
                                 "VALUE2": 20
                             },
                             {
                                 "sp": 2,
                                 "cd": 1,
-                                "VALUE1": "70",
+                                "VALUE1": "70\\r",
                                 "VALUE2": 20
                             },
                             {
                                 "sp": 2,
                                 "cd": 1,
-                                "VALUE1": "85",
+                                "VALUE1": "85\\r",
                                 "VALUE2": 20
                             },
                             {
                                 "sp": 2,
                                 "cd": 1,
-                                "VALUE1": "100",
+                                "VALUE1": "100\\r",
                                 "VALUE2": 20
                             }
                         ],
@@ -7429,15 +7481,15 @@
                                 "VALUE2": 300
                             },
                             {
-                                "sp": "6",
-                                "cd": "3",
-                                "VALUE1": "140",
+                                "sp": "6\\r",
+                                "cd": "3\\r",
+                                "VALUE1": "140\\r",
                                 "VALUE2": 300
                             },
                             {
-                                "sp": "6",
-                                "cd": "3",
-                                "VALUE1": "210",
+                                "sp": "6\\r",
+                                "cd": "3\\r",
+                                "VALUE1": "210\\r",
                                 "VALUE2": 300
                             },
                             {
@@ -8776,8 +8828,40 @@
                         ],
                         "potential": [
                             {
-                                "type": "Fire",
-                                "value": "Summons Vulnerability increased by 10%"
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Cooldown time reduced by 2 times"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP消費を1減少"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP消費を1減少"
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "クールダウン時間が2回減少"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP 소모량 감소1"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP 소모량 감소1"
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "쿨다운 시간 감소2회"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=tqwrMglfE4o"
@@ -11056,7 +11140,41 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Vulnerability effect increased by 10%"
+                                "value": "Vulnerability effect increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    },
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Vulnerability effect increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    },
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Damage increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 50
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=KTzDxUUrb64"
@@ -11495,8 +11613,16 @@
                         ],
                         "potential": [
                             {
-                                "type": "Fire",
-                                "value": "Skill damage per attack increased by 20%"
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP消費を1減少"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP 소모 1 감소"
                             }
                         ],
                         "preview": ""
@@ -11769,8 +11895,16 @@
                         ],
                         "potential": [
                             {
-                                "type": "Fire",
-                                "value": "Skill damage per attack increased by 15%"
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP消費を1減少"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP 소모 1 감소"
                             }
                         ],
                         "preview": ""
@@ -11949,8 +12083,16 @@
                         ],
                         "potential": [
                             {
-                                "type": "Fire",
-                                "value": "Magic damage reduction during 6 rounds increased by 25%"
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP消費を1減少"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP 소모 1 감소"
                             }
                         ],
                         "preview": ""
@@ -12118,8 +12260,16 @@
                         ],
                         "potential": [
                             {
-                                "type": "Fire",
-                                "value": "Skill damage per attack increased by 50%"
+                                "type": "Range",
+                                "value": "dark_001"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "dark_001"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "dark_001"
                             }
                         ],
                         "preview": ""
@@ -12293,8 +12443,16 @@
                         ],
                         "potential": [
                             {
-                                "type": "Fire",
-                                "value": "MATK increased by 10% for 6 rounds"
+                                "type": "Range",
+                                "value": "light_011"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "light_011"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "light_011"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=BH9n93NSqa0"
@@ -12721,8 +12879,16 @@
                         ],
                         "potential": [
                             {
-                                "type": "Fire",
-                                "value": "Skill damage per attack increased by 50%"
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP消費を1減少"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP 소모 1 감소"
                             }
                         ],
                         "preview": ""
@@ -13113,8 +13279,16 @@
                         ],
                         "potential": [
                             {
-                                "type": "Fire",
-                                "value": "Skill damage per attack increased by 50%"
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP消費を1減少"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP 소모 1 감소"
                             }
                         ],
                         "preview": ""
@@ -13325,8 +13499,16 @@
                         ],
                         "potential": [
                             {
-                                "type": "Fire",
-                                "value": "Recovery amount increased by 100%"
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP消費を1減少"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP 소모 1 감소"
                             }
                         ],
                         "preview": ""
@@ -13543,8 +13725,16 @@
                         ],
                         "potential": [
                             {
-                                "type": "Fire",
-                                "value": "Skill damage increased by 180%"
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP消費を1減少"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP 소모 1 감소"
                             }
                         ],
                         "preview": ""
