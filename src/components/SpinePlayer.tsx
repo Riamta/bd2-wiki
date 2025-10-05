@@ -706,28 +706,83 @@ export default function SpinePlayer({
   };
 
   const getTranslateX = () => {
-    // 为FatedGuest模式添加特殊处理
-    if (isFatedGuestMode && isFullScreen) {
-      if (screenWidth >= 2400) return '-150%';
-      if (screenWidth >= 1900) return '-135%';
-      if (screenWidth >= 1600) return '-185%';
-      if (screenWidth >= 1400) return '-200%';
-    } else if (isFatedGuestMode) {
-      if (screenWidth >= 2400) return '-150%';
-      if (screenWidth >= 1900) return '-105%';
-      if (screenWidth >= 1600) return '-135%';
-      if (screenWidth >= 1400) return '-321%';
+    if (isFullScreen) {
+      if (isFatedGuestMode) {
+        if (screenWidth >= 2400) return '-110%';
+        if (screenWidth >= 1900) return '-135%';
+        if (screenWidth >= 1600) return '-185%';
+        if (screenWidth >= 1400) return '-200%';
+      }
+      if (isCutsceneMode) {
+        if (screenWidth >= 2400) return '-45%';
+        if (screenWidth >= 1900) return '-45%';
+        if (screenWidth >= 1600) return '-105%';
+        if (screenWidth >= 1400) return '-45%';
+      } else {
+        if (screenWidth >= 2400) return '-23%';
+        if (screenWidth >= 1900) return '-22%';
+        if (screenWidth >= 1600) return '-45%';
+        if (screenWidth >= 1400) return '-10%';
+      }
+    } else {
+      if (isFatedGuestMode) {
+        if (screenWidth >= 2400) return '-155%';
+        if (screenWidth >= 1900) return '-105%';
+        if (screenWidth >= 1600) return '-135%';
+        if (screenWidth >= 1400) return '-155%';
+      } else if (isCutsceneMode) {
+        if (screenWidth >= 2400) return '-45%';
+        if (screenWidth >= 1900) return '-49%';
+        if (screenWidth >= 1600) return '-80%';
+        if (screenWidth >= 1400) return '-45%';
+      } else {
+        if (screenWidth >= 2400) return '-10%';
+        if (screenWidth >= 1900) return '-22%';
+        if (screenWidth >= 1600) return '-33%';
+        if (screenWidth >= 1400) return '-10%';
+      }
     }
-    if (isFullScreen) return '0%';
-
-    // 正常模式的原始逻辑
-    if (screenWidth >= 2400) return '25%';
-    if (screenWidth >= 1900) return '10%';
-    if (screenWidth >= 1600) return '0%';
-    if (screenWidth >= 1400) return '-20%';
-    return '5%';
   };
 
+  const getTranslateY = () => {
+    if (isFullScreen) {
+      if (isFatedGuestMode) {
+        if (screenWidth >= 2400) return '-10%';
+        if (screenWidth >= 1900) return '10%';
+        if (screenWidth >= 1600) return '0%';
+        if (screenWidth >= 1400) return '-20%';
+      } else if (isCutsceneMode) {
+        if (screenWidth >= 2400) return '-10%';
+        if (screenWidth >= 1900) return '-10%';
+        if (screenWidth >= 1600) return '-10%';
+        if (screenWidth >= 1400) return '-10%';
+      }
+      else {
+        if (screenWidth >= 2400) return '-3%';
+        if (screenWidth >= 1900) return '-3%';
+        if (screenWidth >= 1600) return '-3%';
+        if (screenWidth >= 1400) return '-3%';
+      }
+    }
+    else {
+      if (isFatedGuestMode) {
+        if (screenWidth >= 2400) return '-10%';
+        if (screenWidth >= 1900) return '-5%';
+        if (screenWidth >= 1600) return '-10%';
+        if (screenWidth >= 1400) return '-20%';
+      } else if (isCutsceneMode) {
+        if (screenWidth >= 2400) return '-10%';
+        if (screenWidth >= 1900) return '-10%';
+        if (screenWidth >= 1600) return '-10%';
+        if (screenWidth >= 1400) return '-10%';
+      } else {
+        if (screenWidth >= 2400) return '-3%';
+        if (screenWidth >= 1900) return '-3%';
+        if (screenWidth >= 1600) return '-3%';
+        if (screenWidth >= 1400) return '-3%';
+      }
+    }
+  };
   const getTransformOrigin = () => {
     if (isMobile) return 'center';
     if (isFullScreen) return 'center';
@@ -774,7 +829,7 @@ export default function SpinePlayer({
         userSelect: 'none',
         WebkitUserSelect: 'none',
         WebkitTapHighlightColor: 'transparent',
-        transform: `translate(${position.x}px, ${position.y}px) scale(${isMobile ? (zoomLevel * 0.8 * (isCutsceneMode ? getScaleCutscene() : (isFatedGuestMode ? getScaleFatedGuest() : 1))) : (getScale() * zoomLevel * (isCutsceneMode ? getScaleCutscene() : (isFatedGuestMode ? getScaleFatedGuest() : 1)))}) translateX(${isMobile ? '0' : getTranslateX()}) translateY(${isMobile ? '0' : (typeof spineData.offset?.y === 'number' ? `${spineData.offset.y}%` : (spineData.offset?.y || '-5%'))})`,
+        transform: `translate(${position.x}px, ${position.y}px) scale(${isMobile ? (zoomLevel * 0.8 * (isCutsceneMode ? getScaleCutscene() : (isFatedGuestMode ? getScaleFatedGuest() : 1))) : (getScale() * zoomLevel * (isCutsceneMode ? getScaleCutscene() : (isFatedGuestMode ? getScaleFatedGuest() : 1)))}) translateX(${isMobile ? '0' : getTranslateX()}) translateY(${isMobile ? '0' : getTranslateY()})`,
         transformOrigin: getTransformOrigin(),
         opacity: isLoading ? 0 : 1,
         transition: isMobile ? 'opacity 0.3s ease-in-out' : 'opacity 0.3s ease-in-out, transform 0.1s ease-out'

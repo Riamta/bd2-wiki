@@ -472,8 +472,8 @@ export default function CharacterDetailPage() {
                                             : currentCostume.image_url
                                     }
                                     className="spine-character-background"
-                                    width={isFatedGuestMode ? 5000 : 2560}
-                                    height={isFatedGuestMode ? 5000 : 2560}
+                                    width={isFatedGuestMode ? 5000 : 5000}
+                                    height={isFatedGuestMode ? 5000 : 5000}
                                     isHVersion={isHVersion}
                                     isCutsceneMode={isCutsceneMode}
                                     isFatedGuestMode={isFatedGuestMode}

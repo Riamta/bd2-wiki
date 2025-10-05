@@ -202,17 +202,22 @@ def parse_js_data(js_file_path: str) -> Dict[str, Any]:
                         if level_obj:
                             levels[0] = level_obj
             
-            # Parse skillPotential_en hoặc skillPotential (chỉ nếu có)
+            # Parse skillPotential_en và skillPotential (chỉ nếu có)
             potential = []
             if 'skillPotential_en:' in object_content or 'skillPotential:' in object_content:
-                # Sử dụng regex phức tạp hơn để match nested brackets
-                potential_match = re.search(r'skillPotential_en:\s*\[(.*?)\]', object_content, re.DOTALL)
-                if not potential_match:
-                    # Thử tìm skillPotential thay vì skillPotential_en
-                    potential_match = re.search(r'skillPotential:\s*\[(.*?)\]', object_content, re.DOTALL)
-                
+                # Tìm skillPotential_en trước
+                potential_match = re.search(r'skillPotential_en:\s*\[(.*?)\],', object_content, re.DOTALL)
                 if potential_match:
                     potential_content = potential_match.group(1)
+                else:
+                    # Nếu không có skillPotential_en, tìm skillPotential
+                    potential_match = re.search(r'skillPotential:\s*\[(.*?)\],', object_content, re.DOTALL)
+                    if potential_match:
+                        potential_content = potential_match.group(1)
+                    else:
+                        potential_match = None
+                
+                if potential_match:
                     # Parse potential objects with switches - sử dụng regex đơn giản hơn
                     # Tìm tất cả các object bắt đầu với {
                     potential_objects = []
@@ -295,25 +300,14 @@ def parse_js_data(js_file_path: str) -> Dict[str, Any]:
             # Nếu không tìm thấy skillPotential_en hoặc skillPotential trong object hiện tại, tìm theo costumeId
             if not potential and costume_id:
                 # Tìm object có costumeId này và có skillPotential_en hoặc skillPotential
-                costume_pattern = rf'costumeId:\s*"{costume_id}".*?skillPotential_en:\s*\[(.*?)\]'
+                costume_pattern = rf'costumeId:\s*"{costume_id}".*?(?:skillPotential_en|skillPotential):\s*\[(.*?)\],'
                 costume_match = re.search(costume_pattern, content, re.DOTALL)
-                
-                if not costume_match:
-                    # Thử tìm skillPotential thay vì skillPotential_en
-                    costume_pattern = rf'costumeId:\s*"{costume_id}".*?skillPotential:\s*\[(.*?)\]'
-                    costume_match = re.search(costume_pattern, content, re.DOTALL)
                 
                 # Nếu không tìm thấy với pattern đơn giản, thử pattern phức tạp hơn
                 if not costume_match:
                     # Tìm vị trí bắt đầu của skillPotential_en hoặc skillPotential
-                    start_pattern = rf'costumeId:\s*"{costume_id}".*?skillPotential_en:\s*\['
+                    start_pattern = rf'costumeId:\s*"{costume_id}".*?(?:skillPotential_en|skillPotential):\s*\['
                     start_match = re.search(start_pattern, content, re.DOTALL)
-                    
-                    if not start_match:
-                        # Thử tìm skillPotential thay vì skillPotential_en
-                        start_pattern = rf'costumeId:\s*"{costume_id}".*?skillPotential:\s*\['
-                        start_match = re.search(start_pattern, content, re.DOTALL)
-                    
                     if start_match:
                         start_pos = start_match.end()
                         # Tìm vị trí kết thúc của array
@@ -519,7 +513,7 @@ def parse_js_data(js_file_path: str) -> Dict[str, Any]:
                         if mr_match:
                             maxlevel["MRES"] = int(mr_match.group(1))
             
-            # Lưu character nếu có ít nhất một trong các trường: skill_en, level, potential, chain, hoặc maxlevel
+            # Lưu character nếu có ít nhất một trong các trường: skill_en, level, potential (skillPotential_en hoặc skillPotential), chain, hoặc maxlevel
             if skill_en_parsed or levels or potential or chain_value or maxlevel:
                 # Nếu character đã tồn tại, merge dữ liệu
                 if costume_id in characters:
@@ -589,15 +583,20 @@ def update_json_data(json_file_path: str, characters_data: Dict[str, Any], conte
                                 levels_list.append(level_data)
                             costume['skill']['levels'] = levels_list
                         
-                        # Cập nhật potential từ skillPotential_en
+                        # Cập nhật potential từ skillPotential_en hoặc skillPotential
                         if char_data['skillPotential_en']:
                             costume['skill']['potential'] = char_data['skillPotential_en']
                             print(f"Updated potential for costume {costume_id}: {len(char_data['skillPotential_en'])} items")
                             # In ra chi tiết potential để debug
                             for i, pot in enumerate(char_data['skillPotential_en']):
-                                print(f"  Potential {i+1}: {pot['type']} - {pot['value']}")
-                                if 'switches' in pot:
-                                    print(f"    Switches: {pot['switches']}")
+                                try:
+                                    print(f"  Potential {i+1}: {pot['type']} - {pot['value']}")
+                                    if 'switches' in pot:
+                                        print(f"    Switches: {pot['switches']}")
+                                except UnicodeEncodeError:
+                                    print(f"  Potential {i+1}: [Unicode content]")
+                                    if 'switches' in pot:
+                                        print(f"    Switches: {pot['switches']}")
                         
                         # Cập nhật chain
                         if char_data['chain']:
@@ -655,15 +654,20 @@ def update_json_data(json_file_path: str, characters_data: Dict[str, Any], conte
                         levels_list.append(level_data)
                     character['skill']['levels'] = levels_list
                 
-                # Cập nhật potential từ skillPotential_en
+                # Cập nhật potential từ skillPotential_en hoặc skillPotential
                 if char_data['skillPotential_en']:
                     character['skill']['potential'] = char_data['skillPotential_en']
                     print(f"Updated potential for character {character_id}: {len(char_data['skillPotential_en'])} items")
                     # In ra chi tiết potential để debug
                     for i, pot in enumerate(char_data['skillPotential_en']):
-                        print(f"  Potential {i+1}: {pot['type']} - {pot['value']}")
-                        if 'switches' in pot:
-                            print(f"    Switches: {pot['switches']}")
+                        try:
+                            print(f"  Potential {i+1}: {pot['type']} - {pot['value']}")
+                            if 'switches' in pot:
+                                print(f"    Switches: {pot['switches']}")
+                        except UnicodeEncodeError:
+                            print(f"  Potential {i+1}: [Unicode content]")
+                            if 'switches' in pot:
+                                print(f"    Switches: {pot['switches']}")
                 
                 # Cập nhật chain
                 if char_data['chain']:
@@ -694,7 +698,7 @@ def main():
     
     characters_data = parse_js_data(js_file_path)
     
-    print(f"Da tim thay {len(characters_data)} characters co skill_en")
+    print(f"Da tim thay {len(characters_data)} characters co skill_en va/hoac potential")
     
     print("Dang cap nhat data_copy.json...")
     update_json_data(json_file_path, characters_data, content)

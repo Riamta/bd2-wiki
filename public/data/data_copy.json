@@ -176,7 +176,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ],
                         "preview": ""
@@ -250,7 +270,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "ATK increased by 10% during 2 rounds"
+                                "value": "ATK increased by 10% during 2 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "ATK increased by 10% during 4~6 rounds (according to skill level)",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "ATK increased by 10% during 2 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 10
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=2ltCOHQUGnM"
@@ -325,7 +371,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase the shield by 15%"
+                                "value": "Increase the shield by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Reduce the physical damage received by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase the shield by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -395,7 +467,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase skill damage by 75%"
+                                "value": "Increase skill damage by 75%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 75
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase ATK by +10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase skill damage by 75%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 75
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -462,7 +560,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "fire_025"
                             }
                         ],
                         "preview": ""
@@ -570,6 +688,20 @@
                             {
                                 "type": "Cooldown",
                                 "value": "The cooldown time is reduced by 2 times."
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "light_025"
                             }
                         ]
                     },
@@ -632,7 +764,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 35%"
+                                "value": "Skill damage increased by 35%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 35
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 35%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 35
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Cooldown reduced by 2 times"
                             }
                         ]
                     },
@@ -701,7 +853,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 20%"
+                                "value": "Skill damage increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "light_011"
                             }
                         ]
                     },
@@ -764,7 +936,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ]
                     },
@@ -852,7 +1044,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "ATK increased by +30%"
+                                "value": "ATK increased by +30%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "ATK increased by +4 turns",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Plus",
+                                "value": "Our army increased by 6SP"
                             }
                         ]
                     },
@@ -958,7 +1170,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 30%"
+                                "value": "The skill damage of each attack is increased by 30%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 30%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooling time is reduced by 2 times"
                             }
                         ]
                     },
@@ -1022,6 +1254,20 @@
                             {
                                 "type": "Plus",
                                 "value": "Magic resistance reduced by 15% for 2 rounds"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage per attack increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
                             }
                         ]
                     },
@@ -1090,7 +1336,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 30%"
+                                "value": "The skill damage of each attack is increased by 30%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 30%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The silence effect is increased by 2 turns",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 2
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -1156,7 +1428,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 10%"
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooling time is reduced by 2 times"
                             }
                         ]
                     },
@@ -1270,7 +1562,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 30%"
+                                "value": "The skill damage of each attack is increased by 30%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 30%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "wind_004"
                             }
                         ]
                     },
@@ -1335,7 +1647,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 7%"
+                                "value": "The skill damage of each attack is increased by 7%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 7
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 8%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 8
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooling time is reduced by 2 times"
                             }
                         ]
                     },
@@ -1407,7 +1739,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 20%"
+                                "value": "The skill damage of each attack is increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ]
                     },
@@ -1472,7 +1824,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 10%"
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ]
                     },
@@ -1584,7 +1956,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 12%"
+                                "value": "Skill damage increased by 12%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 12
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 20% per round during 6 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 20% per round during 6 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 20
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -1653,7 +2051,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Shield increased by 15%"
+                                "value": "Shield increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Shield increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
                             }
                         ]
                     },
@@ -1716,7 +2134,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase skill damage by 2% per attack"
+                                "value": "Increase skill damage by 2% per attack",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "Reduce SP consumption by 1"
+                            },
+                            {
+                                "type": "Plus",
+                                "value": "Reduce defense by 20% for 2 turns"
                             }
                         ]
                     },
@@ -1780,7 +2212,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 15%"
+                                "value": "Skill damage increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -1901,7 +2353,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Our army gains SP+1"
+                                "value": "Our army gains SP+1",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increases by 125%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 125
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The enemy loses SP+1",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 1
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -1980,7 +2458,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Debuff increased by 2 turns"
+                                "value": "Debuff increased by 2 turns",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Cooldown reduced by 2 times"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "wind_011"
                             }
                         ]
                     },
@@ -2097,7 +2589,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 50%"
+                                "value": "Skill damage increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Damage received increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 25
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -2173,7 +2685,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooling time is reduced by 4 times"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The number of attacks is increased by 2 times",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 2
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -2249,7 +2781,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase the skill damage of each attack by 2%"
+                                "value": "Increase the skill damage of each attack by 2%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase the skill damage of each attack by 2%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase the ATK by 25% for 2~6 rounds (according to skill level)",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -2362,7 +2920,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 35%"
+                                "value": "The skill damage of each attack is increased by 35%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 35
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each round is increased by 50% for 7 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 50
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each round is increased by 50% for 7 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 50
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -2432,7 +3016,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Defense reduction increased by 10% for 4 rounds"
+                                "value": "Defense reduction increased by 10% for 4 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage per attack increased by 8%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 8
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Defense reduction increased by 10% for 4 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -2507,7 +3117,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "ATK and skill damage increased by 20%"
+                                "value": "ATK and skill damage increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "ATK increased by 2 rounds and the number of rounds increased",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Avoidance increased by 1 time",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 1
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -2618,7 +3254,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase the skill damage of each attack by 30%"
+                                "value": "Increase the skill damage of each attack by 30%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "Reduce the SP consumption by 1"
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Reduce the cooling time by 2 times"
                             }
                         ]
                     },
@@ -2688,7 +3338,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Magic resistance reduction increased by 5% for 4 rounds"
+                                "value": "Magic resistance reduction increased by 5% for 4 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage per attack increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage per attack increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -2756,7 +3432,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 25%"
+                                "value": "The skill damage of each attack is increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ]
                     },
@@ -2823,7 +3519,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage is increased by 25%"
+                                "value": "Skill damage is increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage is increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage is increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -2935,7 +3657,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Bleeding damage received per round is increased by 50%"
+                                "value": "Bleeding damage received per round is increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 50
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage is increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "water_025"
                             }
                         ]
                     },
@@ -3006,7 +3748,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "ATK or MATK increased by 10%"
+                                "value": "ATK or MATK increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Recovery amount increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "water_032"
                             }
                         ]
                     },
@@ -3076,7 +3838,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Damage Buff effect increased by 20%"
+                                "value": "Damage Buff effect increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Damage Buff effect increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 20
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -3192,7 +3974,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each round is increased by 4%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ]
                     },
@@ -3270,7 +4072,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 10%"
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each round is increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The damage is increased by 2 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 2
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -3456,40 +4284,28 @@
                         "preview": "",
                         "potential": [
                             {
-                                "type": "Rhombus",
-                                "value": "SP consumption reduced by 1"
+                                "type": "Fire",
+                                "value": "Skill damage increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 100
+                                    }
+                                ]
                             },
                             {
                                 "type": "Cooldown",
-                                "value": "Cooldown time reduced by 2"
-                            },
-                            {
-                                "type": "Range",
-                                "value": "fire_011"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP消費を1減少"
-                            },
-                            {
-                                "type": "Cooldown",
-                                "value": "冷却時間が2回分短縮"
-                            },
-                            {
-                                "type": "Range",
-                                "value": "fire_011"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP 소모 1 감소"
-                            },
-                            {
-                                "type": "Cooldown",
-                                "value": "쿨타임이 2회 감소"
-                            },
-                            {
-                                "type": "Range",
-                                "value": "fire_011"
+                                "value": "Cooldown reduced by 2 times"
                             }
                         ]
                     },
@@ -3552,7 +4368,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 60%"
+                                "value": "The skill damage of each attack is increased by 60%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 60
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "The SP consumption is reduced by 1"
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooling time is reduced by 2 times"
                             }
                         ]
                     },
@@ -3672,6 +4502,20 @@
                             {
                                 "type": "Rhombus",
                                 "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Damage reduction reduced by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Plus",
+                                "value": "4 rounds of provocation"
                             }
                         ]
                     },
@@ -3746,7 +4590,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Damage reduction increased by 15%"
+                                "value": "Damage reduction increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The number of rounds received increased by 2 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Plus",
+                                "value": "Generate a shield of 100% of your maximum life during 2 rounds"
                             }
                         ]
                     },
@@ -3816,6 +4680,20 @@
                             {
                                 "type": "Cooldown",
                                 "value": "Reduce the cooling time by 2 times"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase the duration of the damage-increasing effect by 2 turns",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "Reduce the SP consumption by 1"
                             }
                         ]
                     },
@@ -3928,6 +4806,20 @@
                             {
                                 "type": "Plus",
                                 "value": "Defense reduced by 10% for 2 rounds"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 5% per attack",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Cooldown reduced by 2 times"
                             }
                         ]
                     },
@@ -3998,6 +4890,20 @@
                             {
                                 "type": "Plus",
                                 "value": "Magic resistance reduced by 10% for 2 rounds"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage per attack increased by 8%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 8
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Cooldown reduced by 2 times"
                             }
                         ]
                     },
@@ -4067,7 +4973,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 10%"
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -4179,7 +5111,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 30%"
+                                "value": "The skill damage of each attack is increased by 30%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooling time is reduced by 2 times"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=2ltCOHQUGnM"
@@ -4249,7 +5195,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 10%"
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "fire_005"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=C_b3rB0GX6E"
@@ -4361,7 +5327,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Damage reduction reduced by 10%"
+                                "value": "Damage reduction reduced by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=e_A5oy_BXLc"
@@ -4430,7 +5410,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase energy defense by 15%"
+                                "value": "Increase energy defense by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase counterattack skill damage by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase energy defense by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 20
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=5jQzXTPvN14"
@@ -4535,7 +5541,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 65% ​​"
+                                "value": "Skill damage increased by 65% ​​",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 65
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Cooldown reduced by 2 times"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "water_031"
                             }
                         ],
                         "preview": ""
@@ -4598,7 +5618,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=KTzDxUUrb64"
@@ -4668,7 +5708,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=ut1lyYgFf2o"
@@ -4781,7 +5841,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 35%"
+                                "value": "The skill damage of each attack is increased by 35%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 35
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooling time is reduced by 2 times"
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=hYeXxSMuWIg"
@@ -4852,7 +5926,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 100%"
+                                "value": "Skill damage increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Cooldown time reduced by 4 times"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Our army increased by 1SP",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 1
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -4965,7 +6059,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase the damage reduction by 10%"
+                                "value": "Increase the damage reduction by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase the damage reduction by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Reduce the cooling time by 2 times"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=sx3GUJ438eA"
@@ -5040,7 +6154,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "MATK increased by 20%"
+                                "value": "MATK increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "MATK increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=BX8oe0UCWGI"
@@ -5146,7 +6280,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooldown time is reduced by 2 times"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=ZcvIr9NjBiU"
@@ -5209,7 +6363,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase skill damage by 35% per attack"
+                                "value": "Increase skill damage by 35% per attack",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 35
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "Reduce SP consumption by 1"
+                            },
+                            {
+                                "type": "Plus",
+                                "value": "Reduce defense by 20% for 2 turns"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=Kjk0irkJS4A"
@@ -5315,6 +6483,26 @@
                             {
                                 "type": "Cooldown",
                                 "value": "Reduce the cooldown time by 2 times"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase skill damage by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase skill damage by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=oLqSgPWlf0s"
@@ -5377,7 +6565,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 2%"
+                                "value": "The skill damage of each attack is increased by 2%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooldown time is reduced by 2 times"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 2%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 2
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=bkIK6fmifW0"
@@ -5438,6 +6646,20 @@
                             }
                         ],
                         "potential": [
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 12% per round during 8 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 12
+                                    }
+                                ]
+                            },
                             {
                                 "type": "Rhombus",
                                 "value": "SP consumption reduced by 1"
@@ -5553,7 +6775,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The Energy Guard is increased by 125%"
+                                "value": "The Energy Guard is increased by 125%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 125
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The Energy Guard is increased by 125%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 125
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooling time is reduced by 2 times"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=9ssDxIuI_CA"
@@ -5616,7 +6858,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 20%"
+                                "value": "The skill damage of each attack is increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooldown time is reduced by 2 times"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=hgpMqTqDqhE"
@@ -5729,7 +6991,35 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The damage is increased by 50%. When the target is in a provocative or concentrated state, the damage is increased by 125%"
+                                "value": "The damage is increased by 50%. When the target is in a provocative or concentrated state, the damage is increased by 125%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    },
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 125
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The damage is increased by 50%. When the target is in a provocative or concentrated state, the damage is increased by 125%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    },
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 125
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=yGb3h5gskPQ"
@@ -5805,7 +7095,31 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Damage increased by 100%. When the target is in provocation or concentrated state, damage increased by 100%"
+                                "value": "Damage increased by 100%. When the target is in provocation or concentrated state, damage increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 100
+                                    },
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "ATK increased by 25% for 4 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=n1j-5R5e7aQ"
@@ -5881,7 +7195,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Damage increased by 90%"
+                                "value": "Damage increased by 90%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 90
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Damage increased by 90%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 90
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Vulnerable status duration increased by 4 turns",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 4
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=hYeXxSMuWIg"
@@ -5997,7 +7337,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase Property DMG by 20%"
+                                "value": "Increase Property DMG by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Reduce cooldown time by 2 times"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "wind_058"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=Z5FZyqUTf54"
@@ -6060,7 +7414,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Energy defense increased by 50%"
+                                "value": "Energy defense increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Energy defense increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "wind_050"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=N6YcxEjf1Bk"
@@ -6167,7 +7541,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Vulnerability effect increased by 25%"
+                                "value": "Vulnerability effect increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Vulnerability effect increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=dc3VpcNoqHg"
@@ -6237,7 +7631,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Chain DMG increased by 1%"
+                                "value": "Chain DMG increased by 1%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Chain DMG increased by 1%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 1
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=dc3VpcNoqHg"
@@ -6350,6 +7764,26 @@
                             {
                                 "type": "Cooldown",
                                 "value": "Reduce the cooldown time by 2 times"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase the skill damage of each attack by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase the ATK by 10% for 4 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=G0Tskvb9FqY"
@@ -6411,7 +7845,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 40%"
+                                "value": "Skill damage increased by 40%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 40
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Cooldown time reduced by 2 times"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 40%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 40
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=7fojPGFNqew"
@@ -6528,7 +7982,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=Avs3tIoWquE"
@@ -6604,7 +8078,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 15%"
+                                "value": "Skill damage increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Continuous damage increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Continuous damage increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 10
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=6FyuGEKY8WQ"
@@ -6719,7 +8219,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "If the enemy is of physical attribute, skill damage is increased by 100%"
+                                "value": "If the enemy is of physical attribute, skill damage is increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "If the enemy is of physical attribute, skill damage is increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=Avs3tIoWquE"
@@ -6832,7 +8352,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase the number of attacks by 2 times"
+                                "value": "Increase the number of attacks by 2 times",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase counterattack damage by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "Reduce SP consumption by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=d9S8P3e1DWc"
@@ -6896,7 +8436,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Energy defense increased by 25% for 4 rounds"
+                                "value": "Energy defense increased by 25% for 4 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Energy defense increased by 25% for 4 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=7fojPGFNqew"
@@ -7015,6 +8575,26 @@
                             {
                                 "type": "Cooldown",
                                 "value": "Cooldown reduced by 2 times"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Critical damage increased by 10% for 6 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Critical damage increased by 15% for 6 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=9SUoyjum738"
@@ -7083,7 +8663,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Energy defense increased by 15% for 2 rounds"
+                                "value": "Energy defense increased by 15% for 2 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Energy defense increased by 15% for 2 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "light_011"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=9SUoyjum738"
@@ -7159,6 +8759,34 @@
                             {
                                 "type": "Range",
                                 "value": "light_011"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increased Property DMG by 5%, increased Property DMG by 10% if the Property is Light",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    },
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increased Property DMG by 5%, increased Property DMG by 10% if the Property is Light",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    },
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 5
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=9SUoyjum738"
@@ -7263,7 +8891,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 50%"
+                                "value": "Skill damage increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "fire_011"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=sx3GUJ438eA"
@@ -7333,7 +8981,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooling time is reduced by 2 times"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=jymc_BE9a7s"
@@ -7398,7 +9066,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Extra damage bonus increased by 10%"
+                                "value": "Extra damage bonus increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Extra damage bonus increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "fire_032"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=YI9WB_n-dfU&start=114&end=135"
@@ -7514,7 +9202,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Damage to target increased by 75%"
+                                "value": "Damage to target increased by 75%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 75
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Damage to target increased by 75%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 75
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://cdn.discordapp.com/attachments/1395307115589140483/1395307856261152849/Roxy-RespectedMaster-PC.mp4?ex=6879f934&is=6878a7b4&hm=ea9eaf4a7e67c030ed897bebaa3f933467d820103f38b430904dd1f6614b0f8b&"
@@ -7581,7 +9295,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 6%"
+                                "value": "The skill damage of each attack is increased by 6%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 6
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 6%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 6
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "water_053"
                             }
                         ],
                         "preview": "https://cdn.discordapp.com/attachments/1395307115589140483/1395307370128871445/Roxy-EmergingDesire-PC.mp4?ex=6879f8c0&is=6878a740&hm=6cb1232de6bea7c71d565b880fb09864b8ea26e3adfa30eef0a51854b29cefcf&"
@@ -7698,7 +9432,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase the physical damage of the chain conditional ATK (+100%)"
+                                "value": "Increase the physical damage of the chain conditional ATK (+100%)",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase the physical damage of the chain conditional ATK (+50%)",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Increase the physical damage of the chain conditional ATK (+100%)",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 100
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=B8NShyWjdcI"
@@ -7771,7 +9531,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase skill damage by 20% per attack"
+                                "value": "Increase skill damage by 20% per attack",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "Reduce SP consumption by 1"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "fire_015"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=B8NShyWjdcI"
@@ -7878,7 +9652,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 100%"
+                                "value": "Skill damage increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "Cooldown reduced by 2 times"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "wind_031"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=6FyuGEKY8WQ"
@@ -7948,7 +9736,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 25%"
+                                "value": "Skill damage increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Wind attribute weakness damage increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=PHnN9nbmw8Q&start=17&end=34"
@@ -8067,7 +9881,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 15
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=RxoHKlaDTt0&start=0&end=23&loop=0"
@@ -8136,7 +9976,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "wind_015"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=6FyuGEKY8WQ"
@@ -8207,7 +10067,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 10%"
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooldown time is reduced by 2 times"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The damage increase of the buff effect is increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 5
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=PHnN9nbmw8Q&start=0&end=16"
@@ -8320,7 +10200,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Extra damage bonus increased by 5%"
+                                "value": "Extra damage bonus increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Extra damage bonus increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "light_032"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=w7A_RCwzaSE"
@@ -8439,7 +10339,37 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 10%"
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Vulnerability (Magic) received by enemy and main target enemy is increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 20
+                                    },
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 20
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=jymc_BE9a7s"
@@ -8508,7 +10438,31 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Primary target and secondary target damage increased by 20%"
+                                "value": "Primary target and secondary target damage increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    },
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Primary target damage increased by 40%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 40
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "fire_031"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=TsoBrhl5lJU"
@@ -8578,6 +10532,26 @@
                             {
                                 "type": "Cooldown",
                                 "value": "The cooldown time is reduced by 2 times."
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "If the enemy is in a vulnerable state, the damage is increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 50
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "If the enemy is in a vulnerable state, the damage is increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 50
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=YI9WB_n-dfU&start=158&end=176"
@@ -8828,40 +10802,28 @@
                         ],
                         "potential": [
                             {
-                                "type": "Rhombus",
-                                "value": "SP consumption reduced by 1"
+                                "type": "Fire",
+                                "value": "Summons Vulnerability increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
                             },
                             {
                                 "type": "Rhombus",
                                 "value": "SP consumption reduced by 1"
                             },
                             {
-                                "type": "Cooldown",
-                                "value": "Cooldown time reduced by 2 times"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP消費を1減少"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP消費を1減少"
-                            },
-                            {
-                                "type": "Cooldown",
-                                "value": "クールダウン時間が2回減少"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP 소모량 감소1"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP 소모량 감소1"
-                            },
-                            {
-                                "type": "Cooldown",
-                                "value": "쿨다운 시간 감소2회"
+                                "type": "Fire",
+                                "value": "Summons Vulnerability increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=tqwrMglfE4o"
@@ -8972,7 +10934,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 40%"
+                                "value": "Skill damage increased by 40%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 40
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 40%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 40
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "light_041"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=e34WKpzZyno"
@@ -9036,7 +11018,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 25%"
+                                "value": "The skill damage of each attack is increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Cooldown",
+                                "value": "The cooling time is reduced by 4 times"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=0E01E2DAOlo&start=0&end=20"
@@ -9112,7 +11114,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage increased by 40%"
+                                "value": "Skill damage increased by 40%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 40
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Critical damage increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=XSqhrswHuQM"
@@ -9220,7 +11242,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 20%"
+                                "value": "The skill damage of each attack is increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=nyMQhV882_A&start=0&end=9"
@@ -9332,7 +11374,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 45%"
+                                "value": "The skill damage of each attack is increased by 45%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 45
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The damage of normal attacks is increased by 150%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 150
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The damage of normal attacks is increased by 150%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 150
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=nyMQhV882_A&start=10&end=21"
@@ -9440,7 +11508,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 10%"
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=nyMQhV882_A&start=22&end=34"
@@ -9554,7 +11642,21 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Increase skill damage by 30% per attack"
+                                "value": "Increase skill damage by 30% per attack",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "Reduce SP consumption by 1"
+                            },
+                            {
+                                "type": "Range",
+                                "value": "water_047"
                             }
                         ],
                         "preview": "https://cdn.discordapp.com/attachments/1395307115589140483/1395310460403712040/Yumi-DancingSnowflake-PC.mp4?ex=6879fba1&is=6878aa21&hm=15cdab69ed31b54ba31fef1689ebe25b2a1e1f4e66bedbbc610f57278840a363&"
@@ -9667,7 +11769,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Main target damage increased by 10%"
+                                "value": "Main target damage increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Main target damage increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=Sd0XGNekx60&start=110&end=130"
@@ -9871,7 +11993,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "ATK +15%"
+                                "value": "ATK +15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "ATK +15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "Reduce SP consumption by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=eyoNt8xUMoA"
@@ -9946,7 +12088,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Damage Buff effect increased by 10%"
+                                "value": "Damage Buff effect increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Recovery increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Augmentation effect increased by 2 turns",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 2
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=VEcfVtzmq_0"
@@ -10065,7 +12233,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Damage increased by 80%"
+                                "value": "Damage increased by 80%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Counterattack damage increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption reduced by 1"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=e_A5oy_BXLc"
@@ -10135,7 +12323,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage per attack increased by 20%"
+                                "value": "Skill damage per attack increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Vulnerability effect increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "dark_060"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=ObMtAVI8_-g"
@@ -10320,7 +12528,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 7%"
+                                "value": "The skill damage of each attack is increased by 7%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 7
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 7%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 7
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
                             }
                         ],
                         "preview": "https://cdnimg-v2.gamekee.com/wiki2.0/video/50118/497891/2025/3/10/601735.mp4"
@@ -10391,7 +12619,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 5%"
+                                "value": "The skill damage of each attack is increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://cdnimg-v2.gamekee.com/wiki2.0/video/50118/497891/2025/3/10/601735.mp4"
@@ -10505,7 +12759,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 15%"
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Damage reduction increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 25
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=NBs0VFIPKq4"
@@ -10618,7 +12898,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Damage increased by 25%"
+                                "value": "Damage increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Vulnerability effect increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Damage increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 25
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=NBs0VFIPKq4"
@@ -10726,7 +13032,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 5%"
+                                "value": "The skill damage of each attack is increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "wind_025"
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=NBs0VFIPKq4"
@@ -10833,7 +13159,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "The skill damage of each attack is increased by 5%"
+                                "value": "The skill damage of each attack is increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "The skill damage of each attack is increased by 5%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 5
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=mtKV3aSpbSg"
@@ -10946,7 +13298,27 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Basic Damage increased by 20%"
+                                "value": "Basic Damage increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 20
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Range",
+                                "value": "light_063"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Additional Damage increased by 8%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 8
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://cdn.discordapp.com/attachments/1395307115589140483/1395334180266835969/Olivier_1.mp4?ex=687a11b8&is=6878c038&hm=eb581ba94cfd1f1f32b96d193262a925aa018084a9abc2e15612930b38147b49&"
@@ -11022,7 +13394,33 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Magic ATK + 6%"
+                                "value": "Magic ATK + 6%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 6
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Magic ATK + 6%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 6
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Magic ATK buff duration + 2 turns",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 2
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=z8LsbbAUq80"
@@ -11173,6 +13571,270 @@
                                     {
                                         "target": "VALUE3",
                                         "value": 50
+                                    }
+                                ]
+                            }
+                        ],
+                        "preview": "https://www.youtube.com/watch?v=KTzDxUUrb64"
+                    },
+                    "permanent": {
+                        "MATK": "5.20"
+                    },
+                    "bonding": {
+                        "HP": "62.40",
+                        "MRES": "13.40"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "Tyr",
+            "path": "Tyr",
+            "name": "Tyr",
+            "attribute": "Wind",
+            "atkType": "Physical",
+            "gender": "Female",
+            "star": 5,
+            "exclusive_gear": {
+                "name": "zzz",
+                "icon": "zzz.webp",
+                "Exclusive Ability": {
+                    "ATK": "0"
+                },
+                "basic_stats_1": {
+                    "DEF": "0"
+                },
+                "basic_stats_2": {
+                    "HP_1": 0,
+                    "HP_2": "0",
+                    "DEF": "0"
+                }
+            },
+            "maxlevel": {
+                "ATK": 396,
+                "HP": 1575,
+                "CR": 10,
+                "CRDM": 50,
+                "DEF": 0,
+                "MRES": 0
+            },
+            "engraving": {
+                "HP": 243,
+                "MATK": 34,
+                "MRES": 8
+            },
+            "awakening": {
+                "MATK": 12,
+                "LIGHT_DAMAGE": 10
+            },
+            "costumes": [
+                {
+                    "id": "Tyr_1",
+                    "path": "Tyr/004101",
+                    "name": "Starlight Guardian",
+                    "image_url": "https://www.souseihaku.com/characters-large/Tyr_1.webp",
+                    "spine_data": [
+                        {
+                            "spinePath": "/assets/characters/Tyr/004101/char004101.skel",
+                            "spineCutscene": "/assets/characters/Tyr/004101/cutscene/cutscene_char004101.skel"
+                        }
+                    ],
+                    "skill": {
+                        "name": "If Only I Could Protect",
+                        "base_skill": "Apply 2 SP Cost Increase to yourself for 6 turn(s).\nDeal  Physical DMG to the enemy equal to {VALUE1}% of your ATK.",
+                        "chain": 1,
+                        "levels": [
+                            {
+                                "sp": 6,
+                                "cd": 3,
+                                "VALUE1": 700
+                            },
+                            {
+                                "sp": 5,
+                                "cd": 3,
+                                "VALUE1": 700
+                            },
+                            {
+                                "sp": 5,
+                                "cd": 3,
+                                "VALUE1": 825
+                            },
+                            {
+                                "sp": 5,
+                                "cd": 3,
+                                "VALUE1": 950
+                            },
+                            {
+                                "sp": 5,
+                                "cd": 3,
+                                "VALUE1": 1075
+                            },
+                            {
+                                "sp": 5,
+                                "cd": 3,
+                                "VALUE1": 1200
+                            }
+                        ],
+                        "potential": [
+                            {
+                                "type": "Rhombus",
+                                "value": "SP consumption is reduced by 1"
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Damage increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Damage increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 100
+                                    }
+                                ]
+                            }
+                        ],
+                        "preview": "https://www.youtube.com/watch?v=KTzDxUUrb64"
+                    },
+                    "permanent": {
+                        "MATK": "5.20"
+                    },
+                    "bonding": {
+                        "HP": "62.40",
+                        "MRES": "13.40"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "Darian",
+            "path": "Darian",
+            "name": "Darian",
+            "attribute": "Water",
+            "atkType": "Physical",
+            "gender": "Female",
+            "star": 5,
+            "exclusive_gear": {
+                "name": "zzz",
+                "icon": "zzz.webp",
+                "Exclusive Ability": {
+                    "ATK": "0"
+                },
+                "basic_stats_1": {
+                    "DEF": "0"
+                },
+                "basic_stats_2": {
+                    "HP_1": 0,
+                    "HP_2": "0",
+                    "DEF": "0"
+                }
+            },
+            "maxlevel": {
+                "ATK": 385,
+                "HP": 1701,
+                "CR": 5,
+                "CRDM": 100,
+                "DEF": 0,
+                "MRES": 0
+            },
+            "engraving": {
+                "HP": 243,
+                "MATK": 34,
+                "MRES": 8
+            },
+            "awakening": {
+                "MATK": 12,
+                "LIGHT_DAMAGE": 10
+            },
+            "costumes": [
+                {
+                    "id": "Darian_1",
+                    "path": "Darian/004001",
+                    "name": "Prophetic Dream",
+                    "image_url": "https://www.souseihaku.com/characters-large/Darian_1.webp",
+                    "spine_data": [
+                        {
+                            "spinePath": "/assets/characters/Darian/004001/char004001.skel",
+                            "spineCutscene": "/assets/characters/Darian/004001/cutscene/cutscene_char004001.skel"
+                        }
+                    ],
+                    "skill": {
+                        "name": "For Mother's Dream",
+                        "base_skill": "Deal  Physical DMG to the enemy equal to {VALUE1}% of your ATK.\nFor the Main Target enemy, deal &1& Physical DMG equal to {VALUE2}% of your ATK instead.",
+                        "chain": 1,
+                        "levels": [
+                            {
+                                "sp": 4,
+                                "cd": 3,
+                                "VALUE1": 500,
+                                "VALUE2": 775
+                            },
+                            {
+                                "sp": 3,
+                                "cd": 3,
+                                "VALUE1": 500,
+                                "VALUE2": 775
+                            },
+                            {
+                                "sp": 3,
+                                "cd": 3,
+                                "VALUE1": 600,
+                                "VALUE2": 775
+                            },
+                            {
+                                "sp": 3,
+                                "cd": 3,
+                                "VALUE1": 600,
+                                "VALUE2": 950
+                            },
+                            {
+                                "sp": 3,
+                                "cd": 3,
+                                "VALUE1": 700,
+                                "VALUE2": 950
+                            },
+                            {
+                                "sp": 3,
+                                "cd": 3,
+                                "VALUE1": 700,
+                                "VALUE2": 1125
+                            }
+                        ],
+                        "potential": [
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 100
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Main target damage increased by 175%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 175
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Fire",
+                                "value": "Skill damage increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 100
                                     }
                                 ]
                             }
@@ -11613,16 +14275,14 @@
                         ],
                         "potential": [
                             {
-                                "type": "Rhombus",
-                                "value": "SP consumption reduced by 1"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP消費を1減少"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP 소모 1 감소"
+                                "type": "Fire",
+                                "value": "Skill damage per attack increased by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 20
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -11895,16 +14555,14 @@
                         ],
                         "potential": [
                             {
-                                "type": "Rhombus",
-                                "value": "SP consumption reduced by 1"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP消費を1減少"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP 소모 1 감소"
+                                "type": "Fire",
+                                "value": "Skill damage per attack increased by 15%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 15
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -12083,16 +14741,14 @@
                         ],
                         "potential": [
                             {
-                                "type": "Rhombus",
-                                "value": "SP consumption reduced by 1"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP消費を1減少"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP 소모 1 감소"
+                                "type": "Fire",
+                                "value": "Magic damage reduction during 6 rounds increased by 25%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE3",
+                                        "value": 25
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -12260,16 +14916,14 @@
                         ],
                         "potential": [
                             {
-                                "type": "Range",
-                                "value": "dark_001"
-                            },
-                            {
-                                "type": "Range",
-                                "value": "dark_001"
-                            },
-                            {
-                                "type": "Range",
-                                "value": "dark_001"
+                                "type": "Fire",
+                                "value": "Skill damage per attack increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -12443,16 +15097,14 @@
                         ],
                         "potential": [
                             {
-                                "type": "Range",
-                                "value": "light_011"
-                            },
-                            {
-                                "type": "Range",
-                                "value": "light_011"
-                            },
-                            {
-                                "type": "Range",
-                                "value": "light_011"
+                                "type": "Fire",
+                                "value": "MATK increased by 10% for 6 rounds",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
                             }
                         ],
                         "preview": "https://www.youtube.com/watch?v=BH9n93NSqa0"
@@ -12563,7 +15215,13 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "When colliding, skill damage increases by 20%"
+                                "value": "When colliding, skill damage increases by 20%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE2",
+                                        "value": 20
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -12668,7 +15326,13 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage per attack increased by 70%"
+                                "value": "Skill damage per attack increased by 70%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 70
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -12774,7 +15438,13 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage per attack increased by 70%"
+                                "value": "Skill damage per attack increased by 70%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 70
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -12879,16 +15549,14 @@
                         ],
                         "potential": [
                             {
-                                "type": "Rhombus",
-                                "value": "SP consumption reduced by 1"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP消費を1減少"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP 소모 1 감소"
+                                "type": "Fire",
+                                "value": "Skill damage per attack increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -13000,7 +15668,13 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "ATK increased by 10%"
+                                "value": "ATK increased by 10%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 10
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -13279,16 +15953,14 @@
                         ],
                         "potential": [
                             {
-                                "type": "Rhombus",
-                                "value": "SP consumption reduced by 1"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP消費を1減少"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP 소모 1 감소"
+                                "type": "Fire",
+                                "value": "Skill damage per attack increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -13499,16 +16171,14 @@
                         ],
                         "potential": [
                             {
-                                "type": "Rhombus",
-                                "value": "SP consumption reduced by 1"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP消費を1減少"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP 소모 1 감소"
+                                "type": "Fire",
+                                "value": "Recovery amount increased by 100%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 100
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -13725,16 +16395,14 @@
                         ],
                         "potential": [
                             {
-                                "type": "Rhombus",
-                                "value": "SP consumption reduced by 1"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP消費を1減少"
-                            },
-                            {
-                                "type": "Rhombus",
-                                "value": "SP 소모 1 감소"
+                                "type": "Fire",
+                                "value": "Skill damage increased by 180%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 180
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -13847,7 +16515,13 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage per attack increased by 50%"
+                                "value": "Skill damage per attack increased by 50%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 50
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
@@ -13953,7 +16627,13 @@
                         "potential": [
                             {
                                 "type": "Fire",
-                                "value": "Skill damage per attack increased by 75%"
+                                "value": "Skill damage per attack increased by 75%",
+                                "switches": [
+                                    {
+                                        "target": "VALUE1",
+                                        "value": 75
+                                    }
+                                ]
                             }
                         ],
                         "preview": ""
